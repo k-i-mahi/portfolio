@@ -36,16 +36,16 @@ namespace Portfolio.Data
                     projects.Add(new Project
                     {
                         Id = reader.GetInt32("Id"),
-                        Title = reader.GetString("Title"),
-                        Description = reader.GetString("Description"),
-                        DetailedDescription = reader.IsDBNull("DetailedDescription") ? "" : reader.GetString("DetailedDescription"),
-                        Technologies = reader.IsDBNull("Technologies") ? "" : reader.GetString("Technologies"),
-                        GitHubLink = reader.IsDBNull("GitHubLink") ? "" : reader.GetString("GitHubLink"),
-                        LiveDemoLink = reader.IsDBNull("LiveDemoLink") ? "" : reader.GetString("LiveDemoLink"),
-                        ImageUrl = reader.IsDBNull("ImageUrl") ? "" : reader.GetString("ImageUrl"),
-                        CreatedDate = reader.GetDateTime("CreatedDate"),
-                        IsActive = reader.GetBoolean("IsActive"),
-                        DisplayOrder = reader.GetInt32("DisplayOrder")
+                        Title = reader["Title"].ToString(),
+                        Description = reader["Description"].ToString(),
+                        DetailedDescription = reader["DetailedDescription"] == DBNull.Value ? "" : reader["DetailedDescription"].ToString(),
+                        Technologies = reader["Technologies"] == DBNull.Value ? "" : reader["Technologies"].ToString(),
+                        GitHubLink = reader["GitHubLink"] == DBNull.Value ? "" : reader["GitHubLink"].ToString(),
+                        LiveDemoLink = reader["LiveDemoLink"] == DBNull.Value ? "" : reader["LiveDemoLink"].ToString(),
+                        ImageUrl = reader["ImageUrl"] == DBNull.Value ? "" : reader["ImageUrl"].ToString(),
+                        CreatedDate = Convert.ToDateTime(reader["CreatedDate"]),
+                        IsActive = Convert.ToBoolean(reader["IsActive"]),
+                        DisplayOrder = Convert.ToInt32(reader["DisplayOrder"])
                     });
                 }
             }
@@ -73,12 +73,12 @@ namespace Portfolio.Data
                     skills.Add(new Skill
                     {
                         Id = reader.GetInt32("Id"),
-                        Name = reader.GetString("Name"),
-                        Category = reader.IsDBNull("Category") ? "" : reader.GetString("Category"),
-                        ProficiencyLevel = reader.GetInt32("ProficiencyLevel"),
-                        IconClass = reader.IsDBNull("IconClass") ? "" : reader.GetString("IconClass"),
-                        IsActive = reader.GetBoolean("IsActive"),
-                        DisplayOrder = reader.GetInt32("DisplayOrder")
+                        Name = reader["Name"].ToString(),
+                        Category = reader["Category"] == DBNull.Value ? "" : reader["Category"].ToString(),
+                        ProficiencyLevel = Convert.ToInt32(reader["ProficiencyLevel"]),
+                        IconClass = reader["IconClass"] == DBNull.Value ? "" : reader["IconClass"].ToString(),
+                        IsActive = Convert.ToBoolean(reader["IsActive"]),
+                        DisplayOrder = Convert.ToInt32(reader["DisplayOrder"])
                     });
                 }
             }
@@ -107,14 +107,14 @@ namespace Portfolio.Data
                     achievements.Add(new Achievement
                     {
                         Id = reader.GetInt32("Id"),
-                        Title = reader.GetString("Title"),
-                        Platform = reader.IsDBNull("Platform") ? "" : reader.GetString("Platform"),
-                        Description = reader.IsDBNull("Description") ? "" : reader.GetString("Description"),
-                        Ranking = reader.IsDBNull("Ranking") ? "" : reader.GetString("Ranking"),
-                        CertificateUrl = reader.IsDBNull("CertificateUrl") ? "" : reader.GetString("CertificateUrl"),
-                        AchievedDate = reader.GetDateTime("AchievedDate"),
-                        IsActive = reader.GetBoolean("IsActive"),
-                        DisplayOrder = reader.GetInt32("DisplayOrder")
+                        Title = reader["Title"].ToString(),
+                        Platform = reader["Platform"] == DBNull.Value ? "" : reader["Platform"].ToString(),
+                        Description = reader["Description"] == DBNull.Value ? "" : reader["Description"].ToString(),
+                        Ranking = reader["Ranking"] == DBNull.Value ? "" : reader["Ranking"].ToString(),
+                        CertificateUrl = reader["CertificateUrl"] == DBNull.Value ? "" : reader["CertificateUrl"].ToString(),
+                        AchievedDate = Convert.ToDateTime(reader["AchievedDate"]),
+                        IsActive = Convert.ToBoolean(reader["IsActive"]),
+                        DisplayOrder = Convert.ToInt32(reader["DisplayOrder"])
                     });
                 }
             }
@@ -143,16 +143,16 @@ namespace Portfolio.Data
                     educations.Add(new Education
                     {
                         Id = reader.GetInt32("Id"),
-                        Institution = reader.GetString("Institution"),
-                        Degree = reader.GetString("Degree"),
-                        Department = reader.IsDBNull("Department") ? "" : reader.GetString("Department"),
-                        CGPA = reader.IsDBNull("CGPA") ? "" : reader.GetString("CGPA"),
-                        StartDate = reader.GetDateTime("StartDate"),
-                        EndDate = reader.IsDBNull("EndDate") ? (DateTime?)null : reader.GetDateTime("EndDate"),
-                        IsCurrent = reader.GetBoolean("IsCurrent"),
-                        Description = reader.IsDBNull("Description") ? "" : reader.GetString("Description"),
-                        IsActive = reader.GetBoolean("IsActive"),
-                        DisplayOrder = reader.GetInt32("DisplayOrder")
+                        Institution = reader["Institution"].ToString(),
+                        Degree = reader["Degree"].ToString(),
+                        Department = reader["Department"] == DBNull.Value ? "" : reader["Department"].ToString(),
+                        CGPA = reader["CGPA"] == DBNull.Value ? "" : reader["CGPA"].ToString(),
+                        StartDate = Convert.ToDateTime(reader["StartDate"]),
+                        EndDate = reader["EndDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["EndDate"]),
+                        IsCurrent = Convert.ToBoolean(reader["IsCurrent"]),
+                        Description = reader["Description"] == DBNull.Value ? "" : reader["Description"].ToString(),
+                        IsActive = Convert.ToBoolean(reader["IsActive"]),
+                        DisplayOrder = Convert.ToInt32(reader["DisplayOrder"])
                     });
                 }
             }
@@ -189,6 +189,38 @@ namespace Portfolio.Data
             {
                 return false;
             }
+        }
+
+        public List<Contact> GetAllContacts()
+        {
+            List<Contact> contacts = new List<Contact>();
+            
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT Id, Name, Email, Phone, Subject, Message, CreatedDate, IsRead 
+                               FROM Contacts ORDER BY CreatedDate DESC";
+                
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    contacts.Add(new Contact
+                    {
+                        Id = reader.GetInt32("Id"),
+                        Name = reader["Name"].ToString(),
+                        Email = reader["Email"].ToString(),
+                        Phone = reader["Phone"] == DBNull.Value ? "" : reader["Phone"].ToString(),
+                        Subject = reader["Subject"] == DBNull.Value ? "" : reader["Subject"].ToString(),
+                        Message = reader["Message"].ToString(),
+                        CreatedDate = Convert.ToDateTime(reader["CreatedDate"]),
+                        IsRead = Convert.ToBoolean(reader["IsRead"])
+                    });
+                }
+            }
+            
+            return contacts;
         }
         #endregion
     }
