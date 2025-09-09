@@ -71,6 +71,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\PortfolioDataAccess.cs" />
+    <Compile Include="Models\PortfolioModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
