@@ -1,91 +1,37 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Portfolio.Data;
-using Portfolio.Models;
+using System.Web.UI.HtmlControls;
 
 namespace Portfolio
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class DefaultSimple : System.Web.UI.Page
     {
-        private PortfolioDataAccess dataAccess;
-        private bool isDatabaseAvailable = true;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                LoadPortfolioData();
-            }
-        }
-
-        private void LoadPortfolioData()
-        {
-            try
-            {
-                dataAccess = new PortfolioDataAccess();
-                LoadDatabaseData();
-            }
-            catch (Exception ex)
-            {
-                // Database not available, load sample data
-                isDatabaseAvailable = false;
                 LoadSampleData();
-                ShowMessage("Portfolio is running with sample data. Configure database connection in Web.config for full functionality.", "info");
             }
-        }
-
-        private void LoadDatabaseData()
-        {
-            // Load Projects
-            var projects = dataAccess.GetAllProjects();
-            var rptProjects = (Repeater)FindControl("rptProjects");
-            if (rptProjects != null)
-            {
-                rptProjects.DataSource = projects;
-                rptProjects.DataBind();
-            }
-
-            // Load Education
-            var education = dataAccess.GetAllEducation();
-            var rptEducation = (Repeater)FindControl("rptEducation");
-            if (rptEducation != null)
-            {
-                rptEducation.DataSource = education;
-                rptEducation.DataBind();
-            }
-
-            // Load Achievements
-            var achievements = dataAccess.GetAllAchievements();
-            var rptAchievements = (Repeater)FindControl("rptAchievements");
-            if (rptAchievements != null)
-            {
-                rptAchievements.DataSource = achievements;
-                rptAchievements.DataBind();
-            }
-
-            // Load Skills
-            LoadSkillsFromDatabase();
         }
 
         private void LoadSampleData()
         {
-            // Load sample skills
-            LoadSampleSkills();
+            // Load Skills
+            LoadSkills();
             
-            // Load sample projects
-            LoadSampleProjects();
+            // Load Projects
+            LoadProjects();
             
-            // Load sample education
-            LoadSampleEducation();
+            // Load Education
+            LoadEducation();
             
-            // Load sample achievements
-            LoadSampleAchievements();
+            // Load Achievements
+            LoadAchievements();
         }
 
-        private void LoadSampleSkills()
+        private void LoadSkills()
         {
             string skillsHtml = @"
                 <div class='skill-category'>
@@ -140,15 +86,14 @@ namespace Portfolio
                     </div>
                 </div>";
 
-            var skillsGrid = FindControl("skills-grid");
+            var skillsGrid = (HtmlGenericControl)FindControl("skillsGrid");
             if (skillsGrid != null)
             {
-                var literal = new Literal { Text = skillsHtml };
-                skillsGrid.Controls.Add(literal);
+                skillsGrid.InnerHtml = skillsHtml;
             }
         }
 
-        private void LoadSampleProjects()
+        private void LoadProjects()
         {
             var projects = new List<dynamic>
             {
@@ -189,7 +134,7 @@ namespace Portfolio
             }
         }
 
-        private void LoadSampleEducation()
+        private void LoadEducation()
         {
             var education = new List<dynamic>
             {
@@ -223,7 +168,7 @@ namespace Portfolio
             }
         }
 
-        private void LoadSampleAchievements()
+        private void LoadAchievements()
         {
             var achievements = new List<dynamic>
             {
@@ -258,6 +203,14 @@ namespace Portfolio
                     Ranking = "Gold Badge",
                     AchievedDate = new DateTime(2024, 5, 15),
                     CertificateUrl = ""
+                },
+                new {
+                    Title = "Google Code Jam Qualifier",
+                    Platform = "Google Code Jam",
+                    Description = "Successfully qualified for Round 1 of Google Code Jam international contest",
+                    Ranking = "Qualified for Round 1",
+                    AchievedDate = new DateTime(2024, 4, 1),
+                    CertificateUrl = ""
                 }
             };
 
@@ -269,101 +222,29 @@ namespace Portfolio
             }
         }
 
-        private void LoadSkillsFromDatabase()
-        {
-            try
-            {
-                var skills = dataAccess.GetAllSkills();
-                var groupedSkills = skills.GroupBy(s => s.Category).ToList();
-
-                string skillsHtml = "";
-                
-                foreach (var group in groupedSkills)
-                {
-                    skillsHtml += $"<div class='skill-category'><h3>{group.Key}</h3>";
-                    foreach (var skill in group.OrderBy(s => s.DisplayOrder))
-                    {
-                        skillsHtml += $@"
-                            <div class='skill-item>
-                                <div class='skill-name'>
-                                    <span>{skill.Name}</span>
-                                    <span>{skill.ProficiencyLevel}%</span>
-                                </div>
-                                <div class='skill-bar'>
-                                    <div class='skill-progress' data-width='{skill.ProficiencyLevel}'></div>
-                                </div>
-                            </div>";
-                    }
-                    skillsHtml += "</div>";
-                }
-
-                var skillsGrid = FindControl("skills-grid");
-                if (skillsGrid != null)
-                {
-                    var literal = new Literal { Text = skillsHtml };
-                    skillsGrid.Controls.Add(literal);
-                }
-            }
-            catch (Exception ex)
-            {
-                LoadSampleSkills();
-            }
-        }
-
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             try
             {
                 var txtName = (TextBox)FindControl("txtName");
                 var txtEmail = (TextBox)FindControl("txtEmail");
-                var txtPhone = (TextBox)FindControl("txtPhone");
-                var txtSubject = (TextBox)FindControl("txtSubject");
                 var txtMessage = (TextBox)FindControl("txtMessage");
 
-                if (isDatabaseAvailable && dataAccess != null)
+                // For demo purposes, just show success message
+                if (txtName != null && txtEmail != null && txtMessage != null &&
+                    !string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtMessage.Text))
                 {
-                    if (txtName != null && txtEmail != null && txtMessage != null)
-                    {
-                        var contact = new Contact
-                        {
-                            Name = txtName.Text.Trim(),
-                            Email = txtEmail.Text.Trim(),
-                            Phone = txtPhone?.Text.Trim() ?? "",
-                            Subject = txtSubject?.Text.Trim() ?? "",
-                            Message = txtMessage.Text.Trim(),
-                            CreatedDate = DateTime.Now,
-                            IsRead = false
-                        };
-
-                        if (dataAccess.SaveContact(contact))
-                        {
-                            ShowMessage("Thank you for your message! I'll get back to you soon.", "success");
-                            ClearContactForm();
-                        }
-                        else
-                        {
-                            ShowMessage("Sorry, there was an error sending your message. Please try again.", "error");
-                        }
-                    }
+                    ShowMessage("Thank you for your message! This is a demo - in a real application, your message would be saved to the database.", "success");
+                    ClearContactForm();
                 }
                 else
                 {
-                    // Demo mode - just show success message
-                    if (txtName != null && txtEmail != null && txtMessage != null &&
-                        !string.IsNullOrEmpty(txtName.Text) && !string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtMessage.Text))
-                    {
-                        ShowMessage("Thank you for your message! (Demo mode - message not saved. Configure database for full functionality.)", "success");
-                        ClearContactForm();
-                    }
-                    else
-                    {
-                        ShowMessage("Please fill in all required fields.", "error");
-                    }
+                    ShowMessage("Please fill in all required fields.", "error");
                 }
             }
             catch (Exception ex)
             {
-                ShowMessage("An error occurred while sending your message. Please try again later.", "error");
+                ShowMessage("An error occurred. Please try again.", "error");
             }
         }
 

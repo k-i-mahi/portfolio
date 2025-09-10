@@ -106,7 +106,7 @@ namespace Portfolio.Data
                 {
                     achievements.Add(new Achievement
                     {
-                        Id = reader.GetInt32("Id"),
+                        Id = Convert.ToInt32(reader["Id"]),
                         Title = reader["Title"].ToString(),
                         Platform = reader["Platform"] == DBNull.Value ? "" : reader["Platform"].ToString(),
                         Description = reader["Description"] == DBNull.Value ? "" : reader["Description"].ToString(),
@@ -142,7 +142,7 @@ namespace Portfolio.Data
                 {
                     educations.Add(new Education
                     {
-                        Id = reader.GetInt32("Id"),
+                        Id = Convert.ToInt32(reader["Id"]),
                         Institution = reader["Institution"].ToString(),
                         Degree = reader["Degree"].ToString(),
                         Department = reader["Department"] == DBNull.Value ? "" : reader["Department"].ToString(),
@@ -208,7 +208,7 @@ namespace Portfolio.Data
                 {
                     contacts.Add(new Contact
                     {
-                        Id = reader.GetInt32("Id"),
+                        Id = Convert.ToInt32(reader["Id"]),
                         Name = reader["Name"].ToString(),
                         Email = reader["Email"].ToString(),
                         Phone = reader["Phone"] == DBNull.Value ? "" : reader["Phone"].ToString(),

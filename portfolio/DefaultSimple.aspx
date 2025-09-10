@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Portfolio.Default" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DefaultSimple.aspx.cs" Inherits="Portfolio.DefaultSimple" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Professional portfolio of a competitive programmer and software developer from KUET" />
     <meta name="keywords" content="competitive programming, software developer, KUET, portfolio, web development" />
-    <title>Your Name - Competitive Programmer & Software Developer | KUET CSE</title>
+    <title>Mahir Rahman - Competitive Programmer & Software Developer | KUET CSE</title>
     <link href="Styles/portfolio.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
                 <nav class="nav">
                     <div class="logo">
                         <i class="fas fa-code"></i>
-                        Your Portfolio
+                        Mahir Rahman
                     </div>
                     <ul class="nav-links" id="navLinks">
                         <li><a href="#home">Home</a></li>
@@ -46,7 +46,7 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Your Name</h1>
+                    <h1>Mahir Rahman</h1>
                     <h2>Competitive Programmer & Software Developer</h2>
                     <p>CSE 3rd Year Student at KUET | Passionate about Problem Solving & Software Development | Building innovative solutions with cutting-edge technologies</p>
                     <a href="#contact" class="cta-button">
@@ -83,19 +83,19 @@
                             My goal is to leverage technology to create innovative solutions that make a positive impact on society.
                         </p>
                         <div class="social-links">
-                            <a href="https://linkedin.com/in/your-profile" target="_blank" title="LinkedIn" aria-label="LinkedIn Profile">
+                            <a href="https://linkedin.com/in/mahir-rahman" target="_blank" title="LinkedIn" aria-label="LinkedIn Profile">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://github.com/your-username" target="_blank" title="GitHub" aria-label="GitHub Profile">
+                            <a href="https://github.com/k-i-mahi" target="_blank" title="GitHub" aria-label="GitHub Profile">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://codeforces.com/profile/your-username" target="_blank" title="Codeforces" aria-label="Codeforces Profile">
+                            <a href="https://codeforces.com/profile/mahir_kuet" target="_blank" title="Codeforces" aria-label="Codeforces Profile">
                                 <i class="fas fa-trophy"></i>
                             </a>
-                            <a href="https://codechef.com/users/your-username" target="_blank" title="CodeChef" aria-label="CodeChef Profile">
+                            <a href="https://codechef.com/users/mahir_kuet" target="_blank" title="CodeChef" aria-label="CodeChef Profile">
                                 <i class="fas fa-code"></i>
                             </a>
-                            <a href="mailto:your-email@example.com" title="Email" aria-label="Send Email">
+                            <a href="mailto:mahir.rahman@kuet.ac.bd" title="Email" aria-label="Send Email">
                                 <i class="fas fa-envelope"></i>
                             </a>
                         </div>
@@ -108,7 +108,7 @@
         <section id="skills" class="section fade-in">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid" id="skills-grid" runat="server">
+                <div class="skills-grid" id="skillsGrid" runat="server">
                     <!-- Skills will be loaded dynamically from code-behind -->
                 </div>
             </div>
@@ -265,7 +265,7 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <p>&copy; <%= DateTime.Now.Year %> Your Name. All rights reserved. | Built with ASP.NET & ?? | 
+                <p>&copy; <%= DateTime.Now.Year %> Mahir Rahman. All rights reserved. | Built with ASP.NET & ?? | 
                 <a href="Admin.aspx" style="color: #fff; text-decoration: none; opacity: 0.7;">Admin</a></p>
             </div>
         </footer>
@@ -278,26 +278,30 @@
             const navToggle = document.getElementById('navToggle');
             const navLinks = document.getElementById('navLinks');
             
-            navToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
 
-            // Close mobile menu when clicking on a link
-            navLinks.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
+                // Close mobile menu when clicking on a link
+                navLinks.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    navToggle.classList.remove('active');
+                });
+            }
 
             // Header scroll effect
             const header = document.getElementById('header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
 
             // Animate skill bars when in view
             const skillBars = document.querySelectorAll('.skill-progress');
@@ -339,8 +343,6 @@
             // Check on scroll
             window.addEventListener('scroll', function() {
                 animateSkills();
-                
-                // Update active nav link based on scroll position
                 updateActiveNavLink();
             });
 
@@ -349,7 +351,7 @@
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
+                    if (target && header) {
                         const headerHeight = header.offsetHeight;
                         const targetPosition = target.offsetTop - headerHeight - 20;
                         
@@ -368,7 +370,8 @@
                 
                 let current = '';
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop - header.offsetHeight - 50;
+                    const headerHeight = header ? header.offsetHeight : 80;
+                    const sectionTop = section.offsetTop - headerHeight - 50;
                     const sectionHeight = section.offsetHeight;
                     
                     if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
@@ -386,18 +389,20 @@
 
             // Form validation enhancement
             const form = document.getElementById('form1');
-            const requiredFields = form.querySelectorAll('[required]');
-            requiredFields.forEach(field => {
-                field.addEventListener('blur', function() {
-                    if (this.value.trim() === '') {
-                        this.style.borderColor = '#e74c3c';
-                    } else {
-                        this.style.borderColor = '#28a745';
-                    }
+            if (form) {
+                const requiredFields = form.querySelectorAll('[required]');
+                requiredFields.forEach(field => {
+                    field.addEventListener('blur', function() {
+                        if (this.value.trim() === '') {
+                            this.style.borderColor = '#e74c3c';
+                        } else {
+                            this.style.borderColor = '#28a745';
+                        }
+                    });
                 });
-            });
+            }
 
-            // Typing effect for hero section (optional)
+            // Typing effect for hero section
             const heroTitle = document.querySelector('.hero h2');
             if (heroTitle) {
                 const text = heroTitle.textContent;
@@ -406,7 +411,7 @@
                 
                 setTimeout(() => {
                     const typeWriter = () => {
-                        if i < text.length) {
+                        if (i < text.length) {
                             heroTitle.textContent += text.charAt(i);
                             i++;
                             setTimeout(typeWriter, 50);
@@ -415,21 +420,6 @@
                     typeWriter();
                 }, 1000);
             }
-
-            // Preload images
-            const images = document.querySelectorAll('img[data-src]');
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            images.forEach(img => imageObserver.observe(img));
         });
     </script>
 </body>

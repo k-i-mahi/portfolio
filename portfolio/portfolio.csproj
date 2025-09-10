@@ -71,8 +71,14 @@
     <Content Include="Admin.aspx" />
     <Content Include="Database\setup.sql" />
     <Content Include="Default.aspx" />
+    <Content Include="DefaultSimple.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Images\README.txt" />
+    <Content Include="Simple.aspx" />
     <Content Include="Styles\portfolio.css" />
+    <Content Include="Test.aspx" />
+    <Content Include="TestConnection.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,10 +91,31 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="DefaultSimple.aspx.cs">
+      <DependentUpon>DefaultSimple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Models\PortfolioModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Simple.aspx.cs">
+      <DependentUpon>Simple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestConnection.aspx.cs">
+      <DependentUpon>TestConnection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DEPLOYMENT_CHECKLIST.md" />
     <None Include="packages.config" />
     <Content Include="README.md" />
     <None Include="Web.Debug.config">
