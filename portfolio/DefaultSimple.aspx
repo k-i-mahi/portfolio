@@ -5,11 +5,11 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Khadimul Islam Mahi - Competitive Programmer, Software Developer & Tech Enthusiast from KUET. Specializing in algorithms, hardware projects, and full-stack development." />
+    <meta name="description" content="Khadimul Islam Mahi - Competitive Programmer, Software Developer & Tech Enthusiast from KUET. 5? CodeChef (Rating: 2019) | 2500+ Problems Solved | CSES 193 Problems | AtCoder | Hardware Projects | Kaggle Competitor" />
     <meta name="keywords" content="Khadimul Islam Mahi, KUET, competitive programming, software developer, Codeforces, Kaggle, hardware projects, robotics, chess, photography, ASP.NET, algorithms" />
     <meta name="author" content="Khadimul Islam Mahi" />
     <meta property="og:title" content="Khadimul Islam Mahi - Competitive Programmer & Tech Enthusiast" />
-    <meta property="og:description" content="CSE Student at KUET | 750+ Problems Solved | Hardware Projects | Kaggle Competitor" />
+    <meta property="og:description" content="CSE Student at KUET | 5? CodeChef Rating 2019 | 2500+ Problems Solved | CSES & AtCoder | Hardware Projects | Kaggle Competitor" />
     <meta property="og:type" content="website" />
     <title>Khadimul Islam Mahi - Competitive Programmer & Tech Enthusiast | KUET CSE</title>
     
@@ -888,33 +888,31 @@
                     </h1>
                     <h2 class="hero-subtitle typing-cursor" id="heroTitle">Competitive Programmer & Tech Enthusiast</h2>
                     
-                    <!-- Profile Image moved below the title -->
-                    <div class="hero-profile-img fade-in-up loading">
-                        <img src="Images/profile.jpg" alt="Khadimul Islam Mahi - Professional Profile" class="profile-hero-img" 
-                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                        <div class="profile-hero-placeholder" style="display: none;">
-                            <i class="fas fa-user-circle"></i>
-                        </div>
-                    </div>
-                    
                     <p class="hero-description fade-in-up loading">
                         CSE 3rd Year Student at KUET | Passionate Problem Solver | Hardware Project Builder | 
                         Kaggle Competitor | Chess Enthusiast | Photography Lover
                     </p>
+                    
+                    <!-- Hero Stats Section -->
                     <div class="hero-stats fade-in-up loading">
                         <div class="stat-card">
-                            <span class="stats-counter" data-target="750">750</span>
+                            <span class="stats-counter" data-target="2500">2500</span>
                             <span class="stats-label">Problems Solved</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stats-counter" data-target="20">20</span>
+                            <span class="stats-counter" data-target="100">100</span>
                             <span class="stats-label">Competitions</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stats-counter" data-target="1456">1456</span>
-                            <span class="stats-label">Max Rating</span>
+                            <span class="stats-counter">5?</span>
+                            <span class="stats-label">CodeChef Rating</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stats-counter" data-target="2019">2019</span>
+                            <span class="stats-label">Max Rating (CC)</span>
                         </div>
                     </div>
+                    
                     <a href="#contact" class="cta-button fade-in-up loading">
                         <i class="fas fa-rocket"></i>
                         <span>Let's Connect</span>
@@ -947,15 +945,15 @@
                                 <div class="achievement-point">
                                     <i class="fas fa-code"></i>
                                     <div>
-                                        <h4>750+ Problems Solved</h4>
-                                        <p>Across multiple competitive programming platforms</p>
+                                        <h4>2500+ Problems Solved</h4>
+                                        <p>Across multiple competitive programming platforms including CSES</p>
                                     </div>
                                 </div>
                                 <div class="achievement-point">
                                     <i class="fas fa-trophy"></i>
                                     <div>
-                                        <h4>20+ Competitions</h4>
-                                        <p>Participated with consistent performance</p>
+                                        <h4>5? CodeChef Rating</h4>
+                                        <p>Maximum rating of 2019 with consistent top performance</p>
                                     </div>
                                 </div>
                                 <div class="achievement-point">
@@ -988,7 +986,7 @@
                         </div>
                         
                         <div class="social-links">
-                            <a href="https://linkedin.com/in/khadimul-islam-mahi" target="_blank" title="LinkedIn" class="social-link pulse-animation">
+                            <a href="https://www.linkedin.com/in/k-i-mahi-29436a282/" target="_blank" title="LinkedIn" class="social-link pulse-animation">
                                 <i class="fab fa-linkedin-in"></i>
                                 <span>LinkedIn</span>
                             </a>
@@ -996,19 +994,23 @@
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
                             </a>
-                            <a href="https://codeforces.com/profile/k_i_mahi" target="_blank" title="Codeforces" class="social-link">
-                                <i class="fas fa-trophy"></i>
-                                <span>Codeforces</span>
+                            <a href="https://www.facebook.com/k.i.mahi.600019" target="_blank" title="Facebook" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
                             </a>
-                            <a href="https://kaggle.com/khadimulmahi" target="_blank" title="Kaggle" class="social-link">
-                                <i class="fab fa-kaggle"></i>
-                                <span>Kaggle</span>
+                            <a href="https://www.instagram.com/k.i.mahi/" target="_blank" title="Instagram" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
                             </a>
-                            <a href="https://chess.com/member/k_i_mahi" target="_blank" title="Chess.com" class="social-link">
+                            <a href="https://www.chess.com/member/k_i_mahi" target="_blank" title="Chess.com" class="social-link">
                                 <i class="fas fa-chess"></i>
-                                <span>Chess</span>
+                                <span>Chess.com</span>
                             </a>
-                            <a href="mailto:khadimul.mahi@kuet.ac.bd" title="Email" class="social-link">
+                            <a href="https://lichess.org/@/k_i_mahi" target="_blank" title="Lichess" class="social-link">
+                                <i class="fas fa-chess-queen"></i>
+                                <span>Lichess</span>
+                            </a>
+                            <a href="mailto:mahi.jess9t@gmail.com" title="Email" class="social-link">
                                 <i class="fas fa-envelope"></i>
                                 <span>Email</span>
                             </a>
@@ -1171,7 +1173,6 @@
                                         <h3><%# Eval("Degree") %></h3>
                                         <h4><%# Eval("Institution") %></h4>
                                         <%# !string.IsNullOrEmpty(Eval("Department").ToString()) ? $"<p><strong>Department:</strong> {Eval("Department")}</p>" : "" %>
-                                        <%# !string.IsNullOrEmpty(Eval("CGPA").ToString()) ? $"<p><strong>CGPA:</strong> {Eval("CGPA")}</p>" : "" %>
                                     </div>
                                     <div class="education-date">
                                         <i class="fas fa-calendar-alt"></i>
@@ -1454,18 +1455,17 @@
                 }
             }
             
-            // Enhanced Counter Animation - Fixed to show correct values
+            // Enhanced Counter Animation
             function initializeCounters() {
-                const counters = document.querySelectorAll('.stats-counter');
+                const counters = document.querySelectorAll('.stats-counter[data-target]');
                 counters.forEach(counter => {
-                    // Set the counter to 0 for animation
                     counter.innerText = '0';
                     counter.setAttribute('data-current', '0');
                 });
             }
             
             function animateCounters() {
-                const counters = document.querySelectorAll('.stats-counter');
+                const counters = document.querySelectorAll('.stats-counter[data-target]');
                 counters.forEach((counter, index) => {
                     setTimeout(() => {
                         animateCounter(counter);
@@ -1492,7 +1492,6 @@
                     if (progress < 1) {
                         requestAnimationFrame(updateCounter);
                     } else {
-                        // Ensure we end with the exact target value
                         counter.innerText = target;
                         counter.setAttribute('data-current', target);
                     }
@@ -1503,7 +1502,6 @@
             
             // Scroll Effects
             function initializeScrollEffects() {
-                // Parallax effect for hero section
                 window.addEventListener('scroll', function() {
                     const scrolled = window.pageYOffset;
                     const hero = document.querySelector('.hero');
@@ -1601,7 +1599,6 @@
             // Keyboard Navigation Support
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
-                    // Close mobile menu
                     const navLinks = document.getElementById('navLinks');
                     const navToggle = document.getElementById('navToggle');
                     if (navLinks && navLinks.classList.contains('active')) {
@@ -1611,19 +1608,11 @@
                 }
             });
             
-            // Performance: Preload images
-            const imageUrls = [
-                'Images/profile.jpg',
-                // Add other image URLs as needed
-            ];
-            
-            imageUrls.forEach(url => {
-                const img = new Image();
-                img.src = url;
-            });
-            
             console.log('?? Portfolio initialized successfully!');
         });
     </script>
+
+    <!-- Codeforces API Integration -->
+    <script src="Scripts/codeforces-api.js"></script>
 </body>
 </html>

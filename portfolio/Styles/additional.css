@@ -808,6 +808,104 @@
     opacity: 0.8;
 }
 
+/* Photography Gallery Styles */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-sm);
+}
+
+.photo-item {
+    aspect-ratio: 1;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.photo-item:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow);
+}
+
+/* Interest Card Specific Styles */
+.interest-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.interest-card .card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.interest-card .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.interest-card .card-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Special card styling for different interests */
+.kaggle-card {
+    border-left: 4px solid #20beff;
+}
+
+.kaggle-card::before {
+    background: linear-gradient(135deg, #20beff 0%, #1565c0 100%);
+}
+
+.chess-card {
+    border-left: 4px solid #795548;
+}
+
+.chess-card::before {
+    background: linear-gradient(135deg, #795548 0%, #3e2723 100%);
+}
+
+.hardware-card {
+    border-left: 4px solid #ff9800;
+}
+
+.hardware-card::before {
+    background: linear-gradient(135deg, #ff9800 0%, #e65100 100%);
+}
+
+.photography-card {
+    border-left: 4px solid #9c27b0;
+}
+
+.photography-card::before {
+    background: linear-gradient(135deg, #9c27b0 0%, #4a148c 100%);
+}
+
+/* Club specific colors */
+.club-sgipc {
+    border-left: 4px solid #4caf50;
+}
+
+.club-sgipc::before {
+    background: linear-gradient(135deg, #4caf50 0%, #1b5e20 100%);
+}
+
+.club-hack {
+    border-left: 4px solid #ff5722;
+}
+
+.club-hack::before {
+    background: linear-gradient(135deg, #ff5722 0%, #bf360c 100%);
+}
+
 /* Responsive improvements */
 @media (max-width: 768px) {
     .profile-hero-img,
@@ -874,6 +972,10 @@
         grid-template-columns: 1fr;
         gap: 0.5rem;
     }
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
@@ -904,5 +1006,13 @@
 
     .skill-category {
         padding: 1.5rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-item {
+        font-size: 1.2rem;
     }
 }

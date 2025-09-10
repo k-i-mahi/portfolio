@@ -69,12 +69,14 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="Admin.aspx" />
+    <Content Include="Database\CreatePortfolioDB.sql" />
     <Content Include="Database\setup.sql" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultSimple.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Images\README.txt" />
+    <Content Include="Scripts\codeforces-api.js" />
     <Content Include="Simple.aspx" />
     <Content Include="Styles\additional.css" />
     <Content Include="Styles\portfolio.css" />
@@ -87,6 +89,7 @@
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Data\DatabaseHelper.cs" />
     <Compile Include="Data\PortfolioDataAccess.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -120,12 +123,27 @@
     <Content Include="ENHANCEMENT_SUMMARY.md" />
     <Content Include="AWESOME_PORTFOLIO_GUIDE.md" />
     <Content Include="Images\README.md" />
+    <Content Include="ADMIN_PANEL_GUIDE.md" />
+    <Content Include="LAUNCH_SUCCESS.md" />
+    <Content Include="CODECHEF_UPDATE_COMPLETE.md" />
+    <Content Include="CODECHEF_5STAR_UPDATE_COMPLETE.md" />
+    <Content Include="CSES_ATCODER_UPDATE_COMPLETE.md" />
+    <Content Include="LAUNCH_PORTFOLIO_VERIFIED.bat" />
+    <Content Include="ACCURATE_PORTFOLIO_UPDATE_COMPLETE.md" />
+    <Content Include="EDUCATION_DATABASE_UPDATE_COMPLETE.md" />
     <None Include="packages.config" />
     <Content Include="README.md" />
     <Content Include="test_application.bat" />
     <Content Include="run-portfolio.bat" />
     <Content Include="SETUP_GUIDE.md" />
     <Content Include="READY_TO_RUN.md" />
+    <Content Include="Web.config.temp" />
+    <Content Include="PORTFOLIO_READY.md" />
+    <Content Include="RUN_PORTFOLIO.bat" />
+    <Content Include="SOCIAL_MEDIA_UPDATE_COMPLETE.md" />
+    <Content Include="PORTFOLIO_FIXES_COMPLETE.md" />
+    <Content Include="RUN_PORTFOLIO_FIXED.bat" />
+    <Content Include="PORTFOLIO_FIXED_README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

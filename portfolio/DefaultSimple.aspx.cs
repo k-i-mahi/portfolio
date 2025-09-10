@@ -213,59 +213,28 @@ namespace Portfolio
                         <i class='fas fa-trophy'></i>
                     </div>
                     <div class='card-title platform-name'>Codeforces</div>
-                    <div class='card-description platform-username'>@k_i_mahi</div>
+                    <div class='card-description platform-username'>@being_mysterious</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>1456</span>
+                            <span class='stats-counter' data-target='1456'>1456</span>
                             <span class='stats-label'>Max Rating</span>
                         </div>
                         <div class='stat-item'>
-                            <span class='stats-counter'>350</span>
+                            <span class='stats-counter' data-target='800'>800+</span>
                             <span class='stats-label'>Problems Solved</span>
                         </div>
                     </div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>45</span>
+                            <span class='stats-counter' data-target='50'>50+</span>
                             <span class='stats-label'>Contests</span>
                         </div>
                         <div class='stat-item'>
                             <span class='stats-counter'>Specialist</span>
-                            <span class='stats-label'>Rank</span>
+                            <span class='stats-label'>Max Rank</span>
                         </div>
                     </div>
-                    <a href='https://codeforces.com/profile/k_i_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
-                        <i class='fas fa-external-link-alt'></i> View Profile
-                    </a>
-                </div>
-                
-                <div class='enhanced-card platform-card'>
-                    <div class='card-icon platform-icon'>
-                        <i class='fas fa-code'></i>
-                    </div>
-                    <div class='card-title platform-name'>LeetCode</div>
-                    <div class='card-description platform-username'>@khadimul_mahi</div>
-                    <div class='platform-stats'>
-                        <div class='stat-item'>
-                            <span class='stats-counter'>1850</span>
-                            <span class='stats-label'>Max Rating</span>
-                        </div>
-                        <div class='stat-item'>
-                            <span class='stats-counter'>300</span>
-                            <span class='stats-label'>Problems Solved</span>
-                        </div>
-                    </div>
-                    <div class='platform-stats'>
-                        <div class='stat-item'>
-                            <span class='stats-counter'>18</span>
-                            <span class='stats-label'>Contests</span>
-                        </div>
-                        <div class='stat-item'>
-                            <span class='stats-counter'>Knight</span>
-                            <span class='stats-label'>Badge</span>
-                        </div>
-                    </div>
-                    <a href='https://leetcode.com/khadimul_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <a href='https://codeforces.com/profile/being_mysterious' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
                 </div>
@@ -278,56 +247,65 @@ namespace Portfolio
                     <div class='card-description platform-username'>@k_i_mahi</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>1680</span>
+                            <span class='stats-counter' data-target='2019'>2019</span>
                             <span class='stats-label'>Max Rating</span>
                         </div>
                         <div class='stat-item'>
-                            <span class='stats-counter'>120</span>
+                            <span class='stats-counter' data-target='900'>900+</span>
                             <span class='stats-label'>Problems Solved</span>
                         </div>
                     </div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>25</span>
+                            <span class='stats-counter' data-target='60'>60+</span>
                             <span class='stats-label'>Contests</span>
                         </div>
                         <div class='stat-item'>
-                            <span class='stats-counter'>4?</span>
+                            <span class='stats-counter'>5?</span>
                             <span class='stats-label'>Stars</span>
                         </div>
                     </div>
-                    <a href='https://codechef.com/users/k_i_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <a href='https://www.codechef.com/users/k_i_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
                 </div>
                 
                 <div class='enhanced-card platform-card'>
                     <div class='card-icon platform-icon'>
-                        <i class='fab fa-hackerrank'></i>
+                        <i class='fas fa-code'></i>
                     </div>
-                    <div class='card-title platform-name'>HackerRank</div>
-                    <div class='card-description platform-username'>@khadimul_mahi</div>
+                    <div class='card-title platform-name'>CSES Problem Set</div>
+                    <div class='card-description platform-username'>@potassium_iodide (User ID: 185082)</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>2150</span>
-                            <span class='stats-label'>Points</span>
-                        </div>
-                        <div class='stat-item'>
-                            <span class='stats-counter'>95</span>
+                            <span class='stats-counter' data-target='193'>193</span>
                             <span class='stats-label'>Problems Solved</span>
                         </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter' data-target='300'>300+</span>
+                            <span class='stats-label'>Total Problems</span>
+                        </div>
                     </div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>5?</span>
-                            <span class='stats-label'>Problem Solving</span>
+                            <span class='stats-counter'>64%</span>
+                            <span class='stats-label'>Completion Rate</span>
                         </div>
                         <div class='stat-item'>
-                            <span class='stats-counter'>Gold</span>
-                            <span class='stats-label'>Badge</span>
+                            <span class='stats-counter'>Advanced</span>
+                            <span class='stats-label'>Level</span>
                         </div>
                     </div>
-                    <a href='https://hackerrank.com/khadimul_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <div style='margin-top: 1rem; font-size: 0.9rem; color: var(--text-light); text-align: left;'>
+                        <strong>Problem Categories Completed:</strong><br>
+                        • Introductory Problems ?<br>
+                        • Sorting and Searching ?<br>
+                        • Dynamic Programming<br>
+                        • Graph Algorithms<br>
+                        • Range Queries<br>
+                        • Tree Algorithms
+                    </div>
+                    <a href='https://cses.fi/user/185082' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
                 </div>
@@ -337,20 +315,20 @@ namespace Portfolio
                         <i class='fas fa-medal'></i>
                     </div>
                     <div class='card-title platform-name'>AtCoder</div>
-                    <div class='card-description platform-username'>@k_i_mahi</div>
+                    <div class='card-description platform-username'>@potassium_iodide</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>1245</span>
+                            <span class='stats-counter' data-target='1245'>1245+</span>
                             <span class='stats-label'>Max Rating</span>
                         </div>
                         <div class='stat-item'>
-                            <span class='stats-counter'>85</span>
+                            <span class='stats-counter' data-target='300'>300+</span>
                             <span class='stats-label'>Problems Solved</span>
                         </div>
                     </div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>18</span>
+                            <span class='stats-counter' data-target='30'>30+</span>
                             <span class='stats-label'>Contests</span>
                         </div>
                         <div class='stat-item'>
@@ -358,9 +336,54 @@ namespace Portfolio
                             <span class='stats-label'>Color</span>
                         </div>
                     </div>
-                    <a href='https://atcoder.jp/users/k_i_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <div style='margin-top: 1rem; font-size: 0.9rem; color: var(--text-light); text-align: left;'>
+                        <strong>Contest Participation:</strong><br>
+                        • AtCoder Beginner Contest (ABC)<br>
+                        • AtCoder Regular Contest (ARC)<br>
+                        • AtCoder Grand Contest (AGC)<br>
+                        • Educational Rounds<br>
+                        • Consistent Performance Growth
+                    </div>
+                    <a href='https://atcoder.jp/users/potassium_iodide' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
+                </div>
+                
+                <div class='enhanced-card platform-card'>
+                    <div class='card-icon platform-icon'>
+                        <i class='fas fa-laptop-code'></i>
+                    </div>
+                    <div class='card-title platform-name'>Other Platforms</div>
+                    <div class='card-description platform-username'>Various Online Judges</div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter' data-target='500'>500+</span>
+                            <span class='stats-label'>Additional Problems</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter' data-target='2500'>2500+</span>
+                            <span class='stats-label'>Total Solved</span>
+                        </div>
+                    </div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter' data-target='10'>10+</span>
+                            <span class='stats-label'>Platforms</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>Expert</span>
+                            <span class='stats-label'>Overall Level</span>
+                        </div>
+                    </div>
+                    <div style='margin-top: 1rem; font-size: 0.9rem; color: var(--text-light); text-align: left;'>
+                        <strong>Additional Platforms:</strong><br>
+                        • UVa Online Judge<br>
+                        • SPOJ (Sphere Online Judge)<br>
+                        • TopCoder<br>
+                        • GeeksforGeeks<br>
+                        • Programming Contests Practice<br>
+                        • Local Contest Problems
+                    </div>
                 </div>
                 
                 <div class='enhanced-card platform-card'>
@@ -371,23 +394,31 @@ namespace Portfolio
                     <div class='card-description platform-username'>@k-i-mahi</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>25</span>
+                            <span class='stats-counter' data-target='30'>30+</span>
                             <span class='stats-label'>Repositories</span>
                         </div>
                         <div class='stat-item'>
-                            <span class='stats-counter'>200</span>
+                            <span class='stats-counter' data-target='250'>250+</span>
                             <span class='stats-label'>Contributions</span>
                         </div>
                     </div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>12</span>
+                            <span class='stats-counter' data-target='15'>15+</span>
                             <span class='stats-label'>Followers</span>
                         </div>
                         <div class='stat-item'>
-                            <span class='stats-counter'>15</span>
+                            <span class='stats-counter' data-target='20'>20+</span>
                             <span class='stats-label'>Following</span>
                         </div>
+                    </div>
+                    <div style='margin-top: 1rem; font-size: 0.9rem; color: var(--text-light); text-align: left;'>
+                        <strong>Repository Highlights:</strong><br>
+                        • Competitive Programming Solutions<br>
+                        • Hardware Project Documentation<br>
+                        • Web Development Projects<br>
+                        • Machine Learning Experiments<br>
+                        • Algorithm Implementations
                     </div>
                     <a href='https://github.com/k-i-mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
@@ -473,42 +504,43 @@ namespace Portfolio
                         </span>
                     </div>
                 </div>
-
+                
                 <div class='enhanced-card interest-card chess-card'>
                     <div class='card-icon interest-icon'>
                         <i class='fas fa-chess'></i>
                     </div>
                     <div class='card-title interest-name'>Chess</div>
-                    <div class='card-description interest-description'>Strategic gameplay and competitive chess tournaments</div>
+                    <div class='card-description interest-description'>Strategic gameplay and online chess platforms</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>1650</span>
+                            <span class='stats-counter'>1109</span>
                             <span class='stats-label'>Chess.com Rating</span>
                         </div>
                         <div class='stat-item'>
-                            <span class='stats-counter'>1580</span>
+                            <span class='stats-counter'>1560</span>
                             <span class='stats-label'>Lichess Rating</span>
                         </div>
                     </div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
-                            <span class='stats-counter'>800+</span>
+                            <span class='stats-counter'>500+</span>
                             <span class='stats-label'>Games Played</span>
                         </div>
                         <div class='stat-item'>
-                            <span class='stats-counter'>75%</span>
-                            <span class='stats-label'>Win Rate</span>
+                            <span class='stats-counter'>Active</span>
+                            <span class='stats-label'>Player Status</span>
                         </div>
                     </div>
                     <div style='margin-top: 1rem; font-size: 0.9rem; color: var(--text-light); text-align: left;'>
-                        <strong>Achievements:</strong><br>
-                        • KUET Inter-Department Runner-up<br>
-                        • Regular tournament participant<br>
-                        • Chess club member<br>
-                        • Puzzle solver (2000+ rating)
+                        <strong>Chess Activities:</strong><br>
+                        • Regular online gameplay<br>
+                        • Tactical puzzle solving<br>
+                        • Chess strategy study<br>
+                        • Tournament participation<br>
+                        • Chess club member at KUET
                     </div>
                     <div style='display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;'>
-                        <a href='https://chess.com/member/k_i_mahi' target='_blank' class='project-link'>
+                        <a href='https://www.chess.com/member/k_i_mahi' target='_blank' class='project-link'>
                             <i class='fas fa-external-link-alt'></i> Chess.com
                         </a>
                         <a href='https://lichess.org/@/k_i_mahi' target='_blank' class='project-link'>
@@ -547,6 +579,14 @@ namespace Portfolio
                         <div class='photo-item'><i class='fas fa-user'></i></div>
                         <div class='photo-item'><i class='fas fa-city'></i></div>
                         <div class='photo-item'><i class='fas fa-calendar-alt'></i></div>
+                    </div>
+                    <div style='display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;'>
+                        <a href='https://www.instagram.com/k.i.mahi/' target='_blank' class='project-link'>
+                            <i class='fab fa-instagram'></i> Instagram
+                        </a>
+                        <a href='https://www.facebook.com/k.i.mahi.600019' target='_blank' class='project-link'>
+                            <i class='fab fa-facebook-f'></i> Facebook
+                        </a>
                     </div>
                 </div>";
 
@@ -779,31 +819,28 @@ namespace Portfolio
                     Institution = "Khulna University of Engineering & Technology (KUET)",
                     Degree = "Bachelor of Science in Computer Science and Engineering",
                     Department = "Computer Science and Engineering",
-                    CGPA = "3.78",
                     StartDate = new DateTime(2022, 1, 1),
                     EndDate = (DateTime?)null,
                     IsCurrent = true,
                     Description = "Currently pursuing B.Sc. in Computer Science and Engineering with specialization in algorithms, software engineering, artificial intelligence, and robotics. Active leadership in KUET Programming Club (SGIPC) and HACK club. Relevant coursework: Advanced Data Structures & Algorithms, Machine Learning, Database Systems, Software Engineering, Computer Networks, Operating Systems, Digital Logic Design, and Embedded Systems."
                 },
                 new {
-                    Institution = "Bogura Cantonment Public School & College",
+                    Institution = "Government Michael Madhusudan College, Jashore",
                     Degree = "Higher Secondary Certificate (HSC)",
                     Department = "Science Group",
-                    CGPA = "5.00",
                     StartDate = new DateTime(2019, 6, 1),
                     EndDate = new DateTime(2021, 5, 31),
                     IsCurrent = false,
-                    Description = "Completed HSC in Science group with perfect GPA 5.00. Concentrated on Mathematics, Physics, Chemistry, and ICT with advanced computer science. Led the school programming team, organized coding workshops for junior students, participated in national programming olympiads, and won multiple science fair competitions. Awarded Best ICT Student of the Year."
+                    Description = "Completed HSC in Science group with excellent results. Concentrated on Mathematics, Physics, Chemistry, and ICT with advanced computer science. Led the college programming initiatives, organized coding workshops for junior students, participated in national programming olympiads, and won multiple science fair competitions."
                 },
                 new {
-                    Institution = "Bogura Cantonment Public School & College",
+                    Institution = "Daud Public School and College, Jashore",
                     Degree = "Secondary School Certificate (SSC)",
                     Department = "Science Group",
-                    CGPA = "5.00",
                     StartDate = new DateTime(2017, 1, 1),
                     EndDate = new DateTime(2019, 5, 31),
                     IsCurrent = false,
-                    Description = "Completed SSC in Science group with perfect GPA 5.00. Built strong foundation in Mathematics, Science, and ICT. Started competitive programming journey, participated in district-level programming and mathematics competitions, and began building first hardware projects with Arduino."
+                    Description = "Completed SSC in Science group with outstanding performance. Built strong foundation in Mathematics, Science, and ICT. Started competitive programming journey, participated in district-level programming and mathematics competitions, and began building first hardware projects with Arduino."
                 }
             };
 
@@ -819,6 +856,30 @@ namespace Portfolio
         {
             var achievements = new List<dynamic>
             {
+                new {
+                    Title = "CodeChef 5-Star Rating Achievement",
+                    Platform = "CodeChef",
+                    Description = "Achieved prestigious 5-star rating on CodeChef as @k_i_mahi with maximum rating of 2019, demonstrating exceptional problem-solving skills across diverse algorithmic challenges",
+                    Ranking = "5? Rating - Max Rating: 2019 (Top tier performance)",
+                    AchievedDate = new DateTime(2024, 11, 15),
+                    CertificateUrl = ""
+                },
+                new {
+                    Title = "Codeforces Specialist Rating Achievement",
+                    Platform = "Codeforces",
+                    Description = "Achieved and maintained Specialist rating (1400+) in Codeforces competitive programming as @being_mysterious with consistent high-performance across 50+ rated contests",
+                    Ranking = "Max Rating: 1456+ (Specialist) - Top 15% globally",
+                    AchievedDate = new DateTime(2024, 11, 1),
+                    CertificateUrl = ""
+                },
+                new {
+                    Title = "CSES Problem Set - 193 Problems Solved",
+                    Platform = "CSES",
+                    Description = "Successfully solved 193 problems on CSES Problem Set as @potassium_iodide, demonstrating strong algorithmic foundations across various categories including DP, graphs, and data structures",
+                    Ranking = "193/300+ Problems Solved - 64% Completion Rate",
+                    AchievedDate = new DateTime(2024, 12, 1),
+                    CertificateUrl = ""
+                },
                 new {
                     Title = "ACM ICPC Asia Dhaka Regional 2024 - Team Qualifier",
                     Platform = "ACM ICPC",
@@ -844,19 +905,19 @@ namespace Portfolio
                     CertificateUrl = ""
                 },
                 new {
-                    Title = "CodeChef Long Challenge Global Winner",
-                    Platform = "CodeChef",
-                    Description = "Achieved 1st position globally in CodeChef October Long Challenge 2024 Division 2, solving all problems with optimal solutions and fastest submission times",
-                    Ranking = "1st Place Global - Division 2 (Perfect Score)",
-                    AchievedDate = new DateTime(2024, 10, 8),
+                    Title = "AtCoder Consistent Performance",
+                    Platform = "AtCoder",
+                    Description = "Maintained consistent performance in AtCoder contests as @potassium_iodide with Brown color rating and regular participation in ABC, ARC, and AGC contests",
+                    Ranking = "Brown Color - 150+ Problems Solved",
+                    AchievedDate = new DateTime(2024, 8, 20),
                     CertificateUrl = ""
                 },
                 new {
-                    Title = "Codeforces Specialist Rating Milestone",
-                    Platform = "Codeforces",
-                    Description = "Achieved and maintained Specialist rating (1400+) in Codeforces competitive programming with consistent high-performance across 45+ rated contests",
-                    Ranking = "Max Rating: 1456 (Specialist) - Top 15% globally",
-                    AchievedDate = new DateTime(2024, 9, 20),
+                    Title = "CodeChef Long Challenge Multiple Top Performances",
+                    Platform = "CodeChef",
+                    Description = "Consistently achieved top rankings in CodeChef Long Challenges as @k_i_mahi, with multiple top 10% global finishes and optimal solution submissions",
+                    Ranking = "Multiple Top 10% Global Finishes - 5? Performer",
+                    AchievedDate = new DateTime(2024, 10, 8),
                     CertificateUrl = ""
                 },
                 new {
@@ -868,27 +929,11 @@ namespace Portfolio
                     CertificateUrl = ""
                 },
                 new {
-                    Title = "Inter-Department Chess Championship",
-                    Platform = "KUET Chess Club",
-                    Description = "Earned Runner-up position in KUET Inter-Department Chess Championship 2024, representing Computer Science & Engineering department with strategic excellence",
-                    Ranking = "2nd Place - Inter-Department Championship",
-                    AchievedDate = new DateTime(2024, 7, 22),
-                    CertificateUrl = ""
-                },
-                new {
-                    Title = "LeetCode Weekly Contest Top Performer",
-                    Platform = "LeetCode",
-                    Description = "Achieved top 5% global ranking in LeetCode Weekly Contest 367 by solving all four problems correctly within optimal time complexity",
-                    Ranking = "Global Rank: 485/12,000+ (Top 4%)",
-                    AchievedDate = new DateTime(2024, 7, 28),
-                    CertificateUrl = ""
-                },
-                new {
-                    Title = "HackerRank Problem Solving Mastery",
-                    Platform = "HackerRank",
-                    Description = "Achieved 5-star rating and Gold badge in Problem Solving domain by successfully solving 95+ algorithmic challenges across various difficulty levels and topics",
-                    Ranking = "5 Stars Gold Badge - Problem Solving Domain",
-                    AchievedDate = new DateTime(2024, 6, 10),
+                    Title = "Multi-Platform Competitive Programming Excellence",
+                    Platform = "Overall Achievement",
+                    Description = "Demonstrated exceptional problem-solving skills across 5 major competitive programming platforms: CodeChef (5?), Codeforces (Specialist), CSES (193 problems), AtCoder (Brown), and GitHub contributions",
+                    Ranking = "2500+ Total Problems Solved Across All Platforms",
+                    AchievedDate = new DateTime(2024, 12, 1),
                     CertificateUrl = ""
                 },
                 new {

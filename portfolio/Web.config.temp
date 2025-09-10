@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="DefaultConnection" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PortfolioDB.mdf;Integrated Security=True;Connect Timeout=30" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  
+  <appSettings>
+    <add key="FullName" value="Khadimul Islam Mahi" />
+    <add key="Email" value="khadimul.mahi@kuet.ac.bd" />
+    <add key="Institution" value="Khulna University of Engineering and Technology (KUET)" />
+    <add key="AdminPanelEnabled" value="true" />
+    <add key="IsDevelopment" value="true" />
+  </appSettings>
+  
+  <system.web>
+    <compilation debug="true" targetFramework="4.8" />
+    <httpRuntime targetFramework="4.8" />
+    <pages>
+      <controls>
+        <add tagPrefix="asp" namespace="System.Web.UI" assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"/>
+      </controls>
+    </pages>
+    <customErrors mode="Off" />
+  </system.web>
+  
+  <system.codedom>
+    <compilers>
+      <compiler language="c#;cs;csharp" extension=".cs" type="Microsoft.CodeDom.Providers.DotNetCompilerPlatform.CSharpCodeProvider, Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" warningLevel="4" compilerOptions="/langversion:default /nowarn:1659;1699;1701" />
+    </compilers>
+  </system.codedom>
+</configuration>

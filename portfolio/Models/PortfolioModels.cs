@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Portfolio.Models
 {
-    public class Project
+    public class ProjectModel
     {
         public int Id { get; set; }
         
@@ -36,8 +36,11 @@ namespace Portfolio.Models
         
         public int DisplayOrder { get; set; }
     }
+
+    // Backward compatibility aliases
+    public class Project : ProjectModel { }
     
-    public class Skill
+    public class SkillModel
     {
         public int Id { get; set; }
         
@@ -45,8 +48,8 @@ namespace Portfolio.Models
         [StringLength(50)]
         public string Name { get; set; }
         
-        [StringLength(20)]
-        public string Category { get; set; } // Programming, Database, Framework, Tool
+        [StringLength(50)]
+        public string Category { get; set; } // Programming Languages, Web Development, Database, etc.
         
         public int ProficiencyLevel { get; set; } // 1-100
         
@@ -55,24 +58,29 @@ namespace Portfolio.Models
         
         public bool IsActive { get; set; }
         
+        public DateTime CreatedDate { get; set; }
+        
         public int DisplayOrder { get; set; }
     }
+
+    // Backward compatibility aliases
+    public class Skill : SkillModel { }
     
-    public class Achievement
+    public class AchievementModel
     {
         public int Id { get; set; }
         
         [Required]
-        [StringLength(100)]
+        [StringLength(200)]
         public string Title { get; set; }
         
         [StringLength(100)]
-        public string Platform { get; set; } // CodeChef, Codeforces, HackerRank, etc.
+        public string Platform { get; set; } // Codeforces, CodeChef, Kaggle, etc.
         
-        [StringLength(500)]
+        [StringLength(1000)]
         public string Description { get; set; }
         
-        [StringLength(50)]
+        [StringLength(100)]
         public string Ranking { get; set; }
         
         [StringLength(500)]
@@ -84,24 +92,27 @@ namespace Portfolio.Models
         
         public int DisplayOrder { get; set; }
     }
+
+    // Backward compatibility aliases
+    public class Achievement : AchievementModel { }
     
-    public class Education
+    public class EducationModel
     {
         public int Id { get; set; }
         
         [Required]
-        [StringLength(100)]
+        [StringLength(200)]
         public string Institution { get; set; }
         
         [Required]
-        [StringLength(100)]
+        [StringLength(200)]
         public string Degree { get; set; }
         
         [StringLength(100)]
         public string Department { get; set; }
         
-        [StringLength(20)]
-        public string CGPA { get; set; }
+        [StringLength(10)]
+        public string CGPA { get; set; }  // Added CGPA property
         
         public DateTime StartDate { get; set; }
         
@@ -116,8 +127,11 @@ namespace Portfolio.Models
         
         public int DisplayOrder { get; set; }
     }
+
+    // Backward compatibility aliases
+    public class Education : EducationModel { }
     
-    public class Contact
+    public class ContactMessageModel
     {
         public int Id { get; set; }
         
@@ -133,7 +147,7 @@ namespace Portfolio.Models
         [StringLength(20)]
         public string Phone { get; set; }
         
-        [StringLength(100)]
+        [StringLength(200)]
         public string Subject { get; set; }
         
         [Required]
@@ -144,4 +158,7 @@ namespace Portfolio.Models
         
         public bool IsRead { get; set; }
     }
+
+    // Backward compatibility aliases  
+    public class Contact : ContactMessageModel { }
 }

@@ -13,7 +13,7 @@ namespace Portfolio.Data
 
         public PortfolioDataAccess()
         {
-            connectionString = ConfigurationManager.ConnectionStrings["PortfolioConnection"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
 
         #region Project Methods
