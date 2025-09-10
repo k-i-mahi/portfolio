@@ -125,6 +125,7 @@
     <Content Include="test_application.bat" />
     <Content Include="run-portfolio.bat" />
     <Content Include="SETUP_GUIDE.md" />
+    <Content Include="READY_TO_RUN.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

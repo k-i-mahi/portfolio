@@ -5,13 +5,13 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Mahir Rahman - Competitive Programmer, Software Developer & Tech Enthusiast from KUET. Specializing in algorithms, hardware projects, and full-stack development." />
-    <meta name="keywords" content="Mahir Rahman, KUET, competitive programming, software developer, Codeforces, Kaggle, hardware projects, robotics, chess, photography, ASP.NET, algorithms" />
-    <meta name="author" content="Mahir Rahman" />
-    <meta property="og:title" content="Mahir Rahman - Competitive Programmer & Tech Enthusiast" />
-    <meta property="og:description" content="CSE Student at KUET | 500+ Problems Solved | Hardware Projects | Kaggle Competitor" />
+    <meta name="description" content="Khadimul Islam Mahi - Competitive Programmer, Software Developer & Tech Enthusiast from KUET. Specializing in algorithms, hardware projects, and full-stack development." />
+    <meta name="keywords" content="Khadimul Islam Mahi, KUET, competitive programming, software developer, Codeforces, Kaggle, hardware projects, robotics, chess, photography, ASP.NET, algorithms" />
+    <meta name="author" content="Khadimul Islam Mahi" />
+    <meta property="og:title" content="Khadimul Islam Mahi - Competitive Programmer & Tech Enthusiast" />
+    <meta property="og:description" content="CSE Student at KUET | 750+ Problems Solved | Hardware Projects | Kaggle Competitor" />
     <meta property="og:type" content="website" />
-    <title>Mahir Rahman - Competitive Programmer & Tech Enthusiast | KUET CSE</title>
+    <title>Khadimul Islam Mahi - Competitive Programmer & Tech Enthusiast | KUET CSE</title>
     
     <!-- External Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -863,7 +863,12 @@
             <div class="hero-particles" id="particles"></div>
             <div class="container">
                 <div class="hero-content">
-                    <!-- Profile Image in Hero -->
+                    <h1 class="fade-in-up loading">
+                        Hello, I'm <span class="text-gradient">Khadimul Islam Mahi</span>
+                    </h1>
+                    <h2 class="hero-subtitle typing-cursor" id="heroTitle">Competitive Programmer & Tech Enthusiast</h2>
+                    
+                    <!-- Profile Image moved below the title -->
                     <div class="hero-profile-img fade-in-up loading">
                         <img src="Images/profile.jpg" alt="Khadimul Islam Mahi - Professional Profile" class="profile-hero-img" 
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
@@ -872,25 +877,21 @@
                         </div>
                     </div>
                     
-                    <h1 class="fade-in-up loading">
-                        Hello, I'm <span class="text-gradient">Khadimul Islam Mahi</span>
-                    </h1>
-                    <h2 class="hero-subtitle typing-cursor" id="heroTitle">Competitive Programmer & Tech Enthusiast</h2>
                     <p class="hero-description fade-in-up loading">
                         CSE 3rd Year Student at KUET | Passionate Problem Solver | Hardware Project Builder | 
                         Kaggle Competitor | Chess Enthusiast | Photography Lover
                     </p>
                     <div class="hero-stats fade-in-up loading">
                         <div class="stat-card">
-                            <span class="stats-counter" data-target="750">0</span>
+                            <span class="stats-counter" data-target="750">750</span>
                             <span class="stats-label">Problems Solved</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stats-counter" data-target="20">0</span>
+                            <span class="stats-counter" data-target="20">20</span>
                             <span class="stats-label">Competitions</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stats-counter" data-target="1456">0</span>
+                            <span class="stats-counter" data-target="1456">1456</span>
                             <span class="stats-label">Max Rating</span>
                         </div>
                     </div>
@@ -1433,11 +1434,13 @@
                 }
             }
             
-            // Enhanced Counter Animation
+            // Enhanced Counter Animation - Fixed to show correct values
             function initializeCounters() {
                 const counters = document.querySelectorAll('.stats-counter');
                 counters.forEach(counter => {
+                    // Set the counter to 0 for animation
                     counter.innerText = '0';
+                    counter.setAttribute('data-current', '0');
                 });
             }
             
@@ -1464,9 +1467,14 @@
                     const currentValue = Math.floor(target * easeOutCubic);
                     
                     counter.innerText = currentValue;
+                    counter.setAttribute('data-current', currentValue);
                     
                     if (progress < 1) {
                         requestAnimationFrame(updateCounter);
+                    } else {
+                        // Ensure we end with the exact target value
+                        counter.innerText = target;
+                        counter.setAttribute('data-current', target);
                     }
                 }
                 
@@ -1479,8 +1487,8 @@
                 window.addEventListener('scroll', function() {
                     const scrolled = window.pageYOffset;
                     const hero = document.querySelector('.hero');
-                    if (hero) {
-                        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                    if (hero && scrolled < hero.offsetHeight) {
+                        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
                     }
                 }, passiveEvent);
             }
