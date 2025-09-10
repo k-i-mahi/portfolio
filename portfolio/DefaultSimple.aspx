@@ -106,10 +106,10 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Enhanced Theme Toggle */
+        /* Enhanced Theme Toggle - Repositioned to avoid navigation overlap */
         .theme-toggle {
             position: fixed;
-            top: 90px;
+            top: 20px;
             right: 20px;
             z-index: 1001;
             background: var(--gradient-primary);
@@ -255,19 +255,20 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
             align-items: center;
+            margin-right: 80px; /* Add space for theme toggle */
         }
 
         .nav-links a {
             color: var(--text-color);
             text-decoration: none;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.8rem;
             border-radius: var(--border-radius-sm);
             transition: var(--transition);
             font-weight: 500;
             position: relative;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .nav-links a::before {
@@ -326,11 +327,11 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
 
-        /* Enhanced Hero Section */
+        /* Enhanced Hero Section - Further lowered position */
         .hero {
             background: var(--gradient-hero);
             color: white;
-            padding: 120px 0 80px;
+            padding: 160px 0 80px; /* Increased from 120px to 160px */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -357,6 +358,7 @@
             z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+            padding-top: 2rem; /* Increased back to 2rem for better spacing */
         }
 
         .hero h1 {
@@ -686,6 +688,7 @@
                 padding: 2rem;
                 box-shadow: var(--shadow);
                 border-radius: 0 0 var(--border-radius) var(--border-radius);
+                margin-right: 0;
             }
 
             .nav-links.active {
@@ -697,8 +700,12 @@
             }
 
             .hero {
-                padding: 100px 0 60px;
+                padding: 140px 0 60px; /* Increased for mobile */
                 text-align: center;
+            }
+
+            .hero-content {
+                padding-top: 1rem; /* Reduced for mobile */
             }
 
             .hero-stats {
@@ -716,7 +723,7 @@
             }
 
             .theme-toggle {
-                top: 80px;
+                top: 15px;
                 right: 15px;
                 width: 50px;
                 height: 50px;
@@ -744,6 +751,19 @@
 
             .stats-counter {
                 font-size: 2rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                padding: 0.5rem 0.5rem;
+            }
+
+            .hero {
+                padding: 120px 0 50px; /* Increased for small screens */
+            }
+
+            .hero-content {
+                padding-top: 0.5rem;
             }
         }
 
