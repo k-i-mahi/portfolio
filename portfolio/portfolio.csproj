@@ -76,6 +76,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\README.txt" />
     <Content Include="Simple.aspx" />
+    <Content Include="Styles\additional.css" />
     <Content Include="Styles\portfolio.css" />
     <Content Include="Test.aspx" />
     <Content Include="TestConnection.aspx" />
@@ -118,9 +119,12 @@
     <Content Include="DEPLOYMENT_CHECKLIST.md" />
     <Content Include="ENHANCEMENT_SUMMARY.md" />
     <Content Include="AWESOME_PORTFOLIO_GUIDE.md" />
+    <Content Include="Images\README.md" />
     <None Include="packages.config" />
     <Content Include="README.md" />
     <Content Include="test_application.bat" />
+    <Content Include="run-portfolio.bat" />
+    <Content Include="SETUP_GUIDE.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

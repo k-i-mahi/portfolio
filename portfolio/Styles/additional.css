@@ -1,0 +1,342 @@
+/* Additional CSS for missing styles */
+
+/* About section profile image */
+.profile-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    object-fit: cover;
+}
+
+/* Error handling for missing images */
+.profile-img[src=""] {
+    display: none;
+}
+
+/* Placeholder for missing profile image */
+.about-content .slide-in-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* When image fails to load, show placeholder */
+.profile-placeholder {
+    width: 350px;
+    height: 400px;
+    background: var(--gradient-primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    margin: 0 auto;
+}
+
+.profile-placeholder:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Alert Messages */
+.alert {
+    padding: 1.5rem 2rem;
+    margin: 1.5rem 0;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    border-left: 4px solid;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.alert-success {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+[data-theme="dark"] .alert-success {
+    background-color: rgba(52, 211, 153, 0.2);
+}
+
+.alert-error {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .alert-error {
+    background-color: rgba(248, 113, 113, 0.2);
+}
+
+.alert-info {
+    background-color: rgba(6, 182, 212, 0.1);
+    color: var(--info-color);
+    border-color: var(--info-color);
+}
+
+[data-theme="dark"] .alert-info {
+    background-color: rgba(34, 211, 238, 0.2);
+}
+
+/* Loading States */
+.loading {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Button States */
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Form Enhancements */
+.form-control.success {
+    border-color: var(--success-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-control.error {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Hero Profile Image Styles */
+.hero-profile-img {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-hero-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.profile-hero-img:hover {
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.profile-hero-placeholder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 5rem;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.profile-hero-placeholder:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced About Section Styles */
+.about-content-text {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text-main {
+    text-align: center;
+}
+
+.about-intro {
+    margin-bottom: 3rem;
+}
+
+.intro-highlight {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-weight: 500;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-achievements {
+    margin: 3rem 0;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.achievement-point {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.achievement-point:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.achievement-point i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    min-width: 3rem;
+}
+
+.achievement-point h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.achievement-point p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.about-description {
+    margin: 2rem 0;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+/* Enhanced Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 12px 20px;
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-light);
+}
+
+.social-link:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow);
+}
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+.social-link span {
+    font-weight: 500;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .profile-hero-img,
+    .profile-hero-placeholder {
+        width: 150px;
+        height: 150px;
+        font-size: 4rem;
+    }
+
+    .achievement-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .achievement-point {
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .achievement-point i {
+        font-size: 2rem;
+        min-width: 2.5rem;
+    }
+
+    .social-links {
+        gap: 0.5rem;
+    }
+
+    .social-link {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    .social-link span {
+        display: none;
+    }
+
+    .intro-highlight {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-hero-img,
+    .profile-hero-placeholder {
+        width: 120px;
+        height: 120px;
+        font-size: 3rem;
+    }
+
+    .achievement-point {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .intro-highlight {
+        font-size: 1rem;
+    }
+}

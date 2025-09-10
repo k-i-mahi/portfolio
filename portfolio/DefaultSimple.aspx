@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="Styles/portfolio.css" rel="stylesheet" />
+    <link href="Styles/additional.css" rel="stylesheet" />
     
     <!-- Dynamic Theme and Enhanced Animations -->
     <style>
@@ -834,7 +835,7 @@
                 <nav class="nav">
                     <a href="#home" class="logo">
                         <i class="fas fa-terminal"></i>
-                        <span>Mahir Rahman</span>
+                        <span>Khadimul Islam Mahi</span>
                     </a>
                     <ul class="nav-links" id="navLinks">
                         <li><a href="#home">Home</a></li>
@@ -862,8 +863,17 @@
             <div class="hero-particles" id="particles"></div>
             <div class="container">
                 <div class="hero-content">
+                    <!-- Profile Image in Hero -->
+                    <div class="hero-profile-img fade-in-up loading">
+                        <img src="Images/profile.jpg" alt="Khadimul Islam Mahi - Professional Profile" class="profile-hero-img" 
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                        <div class="profile-hero-placeholder" style="display: none;">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                    
                     <h1 class="fade-in-up loading">
-                        Hello, I'm <span class="text-gradient">Mahir Rahman</span>
+                        Hello, I'm <span class="text-gradient">Khadimul Islam Mahi</span>
                     </h1>
                     <h2 class="hero-subtitle typing-cursor" id="heroTitle">Competitive Programmer & Tech Enthusiast</h2>
                     <p class="hero-description fade-in-up loading">
@@ -901,45 +911,85 @@
                 <p class="section-subtitle">
                     Passionate about technology, innovation, and creating impactful solutions
                 </p>
-                <div class="about-content">
-                    <div class="slide-in-left">
-                        <img src="Images/profile.jpg" alt="Mahir Rahman - Professional Profile" class="profile-img float-animation" 
-                             onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80'" />
-                    </div>
-                    <div class="about-text slide-in-right">
-                        <p>
-                            I'm a dedicated Computer Science and Engineering student at <strong>Khulna University of Engineering & Technology (KUET)</strong>, 
-                            currently in my 3rd year. My journey is a fascinating blend of competitive programming excellence, hardware innovation, 
-                            and creative exploration.
-                        </p>
-                        <p>
-                            With <strong>750+ problems solved</strong> across multiple platforms, <strong>20+ competitions participated</strong>, 
-                            and hands-on experience in robotics including <strong>obstacle-avoiding and line-following robots</strong>, 
-                            I bridge the gap between theoretical computer science and practical engineering solutions.
-                        </p>
-                        <p>
-                            As an active contributor to <strong>KUET Programming Club (SGIPC)</strong> and <strong>HACK (Hardware Acceleration Club)</strong>, 
-                            I mentor fellow students while continuously expanding my expertise. Beyond coding, I'm passionate about chess strategy, 
-                            Kaggle competitions, and capturing life through photography.
-                        </p>
+                <div class="about-content-text">
+                    <div class="about-text-main slide-in-up">
+                        <div class="about-intro">
+                            <p class="intro-highlight">
+                                I'm a dedicated Computer Science and Engineering student at <strong>Khulna University of Engineering & Technology (KUET)</strong>, 
+                                currently in my 3rd year. My journey is a fascinating blend of competitive programming excellence, hardware innovation, 
+                                and creative exploration.
+                            </p>
+                        </div>
+                        
+                        <div class="about-achievements">
+                            <div class="achievement-grid">
+                                <div class="achievement-point">
+                                    <i class="fas fa-code"></i>
+                                    <div>
+                                        <h4>750+ Problems Solved</h4>
+                                        <p>Across multiple competitive programming platforms</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-point">
+                                    <i class="fas fa-trophy"></i>
+                                    <div>
+                                        <h4>20+ Competitions</h4>
+                                        <p>Participated with consistent performance</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-point">
+                                    <i class="fas fa-robot"></i>
+                                    <div>
+                                        <h4>Hardware Projects</h4>
+                                        <p>Obstacle-avoiding and line-following robots</p>
+                                    </div>
+                                </div>
+                                <div class="achievement-point">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <h4>Community Leadership</h4>
+                                        <p>Active in KUET Programming Club & HACK</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-description">
+                            <p>
+                                I bridge the gap between theoretical computer science and practical engineering solutions. 
+                                As an active contributor to <strong>KUET Programming Club (SGIPC)</strong> and <strong>HACK (Hardware Acceleration Club)</strong>, 
+                                I mentor fellow students while continuously expanding my expertise.
+                            </p>
+                            <p>
+                                Beyond coding, I'm passionate about chess strategy, Kaggle competitions, and capturing life through photography. 
+                                I believe in continuous learning and sharing knowledge with the community.
+                            </p>
+                        </div>
+                        
                         <div class="social-links">
-                            <a href="https://linkedin.com/in/mahir-rahman" target="_blank" title="LinkedIn" class="pulse-animation">
+                            <a href="https://linkedin.com/in/khadimul-islam-mahi" target="_blank" title="LinkedIn" class="social-link pulse-animation">
                                 <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
                             </a>
-                            <a href="https://github.com/k-i-mahi" target="_blank" title="GitHub">
+                            <a href="https://github.com/k-i-mahi" target="_blank" title="GitHub" class="social-link">
                                 <i class="fab fa-github"></i>
+                                <span>GitHub</span>
                             </a>
-                            <a href="https://codeforces.com/profile/mahir_kuet" target="_blank" title="Codeforces">
+                            <a href="https://codeforces.com/profile/k_i_mahi" target="_blank" title="Codeforces" class="social-link">
                                 <i class="fas fa-trophy"></i>
+                                <span>Codeforces</span>
                             </a>
-                            <a href="https://kaggle.com/mahirrahman" target="_blank" title="Kaggle">
+                            <a href="https://kaggle.com/khadimulmahi" target="_blank" title="Kaggle" class="social-link">
                                 <i class="fab fa-kaggle"></i>
+                                <span>Kaggle</span>
                             </a>
-                            <a href="https://chess.com/member/mahir_kuet" target="_blank" title="Chess.com">
+                            <a href="https://chess.com/member/k_i_mahi" target="_blank" title="Chess.com" class="social-link">
                                 <i class="fas fa-chess"></i>
+                                <span>Chess</span>
                             </a>
-                            <a href="mailto:mahir.rahman@kuet.ac.bd" title="Email">
+                            <a href="mailto:khadimul.mahi@kuet.ac.bd" title="Email" class="social-link">
                                 <i class="fas fa-envelope"></i>
+                                <span>Email</span>
                             </a>
                         </div>
                     </div>
@@ -1180,10 +1230,10 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-text">
-                        <p>&copy; <%= DateTime.Now.Year %> Mahir Rahman. Crafted with ?? using ASP.NET & C#</p>
+                        <p>&copy; <%= DateTime.Now.Year %> Khadimul Islam Mahi. Crafted with ?? using ASP.NET & C#</p>
                         <p>
                             <a href="Admin.aspx" style="color: rgba(255,255,255,0.7); text-decoration: none;">Admin Panel</a> |
-                            <a href="mailto:mahir.rahman@kuet.ac.bd" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a>
+                            <a href="mailto:khadimul.mahi@kuet.ac.bd" style="color: rgba(255,255,255,0.7); text-decoration: none;">Contact</a>
                         </p>
                     </div>
                 </div>

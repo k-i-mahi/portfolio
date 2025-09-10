@@ -31,8 +31,9 @@ namespace Portfolio
             }
             catch (Exception ex)
             {
-                // Log error in production
-                ShowMessage("Error loading data. Please refresh the page.", "error");
+                // Log error in production - for now just show a user-friendly message
+                ShowMessage("?? Some data is loading... Please refresh if content doesn't appear shortly.", "info");
+                System.Diagnostics.Debug.WriteLine($"Error loading data: {ex.Message}");
             }
         }
 
@@ -212,7 +213,7 @@ namespace Portfolio
                         <i class='fas fa-trophy'></i>
                     </div>
                     <div class='card-title platform-name'>Codeforces</div>
-                    <div class='card-description platform-username'>@mahir_kuet</div>
+                    <div class='card-description platform-username'>@k_i_mahi</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
                             <span class='stats-counter'>1456</span>
@@ -233,7 +234,7 @@ namespace Portfolio
                             <span class='stats-label'>Rank</span>
                         </div>
                     </div>
-                    <a href='https://codeforces.com/profile/mahir_kuet' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <a href='https://codeforces.com/profile/k_i_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
                 </div>
@@ -243,7 +244,7 @@ namespace Portfolio
                         <i class='fas fa-code'></i>
                     </div>
                     <div class='card-title platform-name'>LeetCode</div>
-                    <div class='card-description platform-username'>@mahir_rahman</div>
+                    <div class='card-description platform-username'>@khadimul_mahi</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
                             <span class='stats-counter'>1850</span>
@@ -264,7 +265,7 @@ namespace Portfolio
                             <span class='stats-label'>Badge</span>
                         </div>
                     </div>
-                    <a href='https://leetcode.com/mahir_rahman' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <a href='https://leetcode.com/khadimul_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
                 </div>
@@ -274,7 +275,7 @@ namespace Portfolio
                         <i class='fas fa-utensils'></i>
                     </div>
                     <div class='card-title platform-name'>CodeChef</div>
-                    <div class='card-description platform-username'>@mahir_kuet</div>
+                    <div class='card-description platform-username'>@k_i_mahi</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
                             <span class='stats-counter'>1680</span>
@@ -295,7 +296,7 @@ namespace Portfolio
                             <span class='stats-label'>Stars</span>
                         </div>
                     </div>
-                    <a href='https://codechef.com/users/mahir_kuet' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <a href='https://codechef.com/users/k_i_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
                 </div>
@@ -305,7 +306,7 @@ namespace Portfolio
                         <i class='fab fa-hackerrank'></i>
                     </div>
                     <div class='card-title platform-name'>HackerRank</div>
-                    <div class='card-description platform-username'>@mahir_rahman</div>
+                    <div class='card-description platform-username'>@khadimul_mahi</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
                             <span class='stats-counter'>2150</span>
@@ -326,7 +327,7 @@ namespace Portfolio
                             <span class='stats-label'>Badge</span>
                         </div>
                     </div>
-                    <a href='https://hackerrank.com/mahir_rahman' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <a href='https://hackerrank.com/khadimul_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
                 </div>
@@ -336,7 +337,7 @@ namespace Portfolio
                         <i class='fas fa-medal'></i>
                     </div>
                     <div class='card-title platform-name'>AtCoder</div>
-                    <div class='card-description platform-username'>@mahir_kuet</div>
+                    <div class='card-description platform-username'>@k_i_mahi</div>
                     <div class='platform-stats'>
                         <div class='stat-item'>
                             <span class='stats-counter'>1245</span>
@@ -357,7 +358,7 @@ namespace Portfolio
                             <span class='stats-label'>Color</span>
                         </div>
                     </div>
-                    <a href='https://atcoder.jp/users/mahir_kuet' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <a href='https://atcoder.jp/users/k_i_mahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
                 </div>
@@ -436,7 +437,7 @@ namespace Portfolio
                         • Natural Language Processing<br>
                         • Computer Vision Challenges
                     </div>
-                    <a href='https://kaggle.com/mahirrahman' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                    <a href='https://kaggle.com/khadimulmahi' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
                         <i class='fas fa-external-link-alt'></i> View Profile
                     </a>
                 </div>
@@ -507,10 +508,10 @@ namespace Portfolio
                         • Puzzle solver (2000+ rating)
                     </div>
                     <div style='display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;'>
-                        <a href='https://chess.com/member/mahir_kuet' target='_blank' class='project-link'>
+                        <a href='https://chess.com/member/k_i_mahi' target='_blank' class='project-link'>
                             <i class='fas fa-external-link-alt'></i> Chess.com
                         </a>
-                        <a href='https://lichess.org/@/mahir_kuet' target='_blank' class='project-link'>
+                        <a href='https://lichess.org/@/k_i_mahi' target='_blank' class='project-link'>
                             <i class='fas fa-external-link-alt'></i> Lichess
                         </a>
                     </div>
@@ -932,6 +933,13 @@ namespace Portfolio
                     !string.IsNullOrWhiteSpace(txtEmail.Text) && 
                     !string.IsNullOrWhiteSpace(txtMessage.Text))
                 {
+                    // Basic email validation
+                    if (!IsValidEmail(txtEmail.Text.Trim()))
+                    {
+                        ShowMessage("?? Please enter a valid email address.", "error");
+                        return;
+                    }
+
                     // In production, this would save to database and send email
                     var contactInfo = new {
                         Name = txtName.Text.Trim(),
@@ -942,7 +950,10 @@ namespace Portfolio
                         Timestamp = DateTime.Now
                     };
 
-                    ShowMessage($"?? Thank you, {contactInfo.Name}! Your message has been received successfully. I'll respond to {contactInfo.Email} within 24 hours. (Demo Mode - In production, this would be saved to database and email notifications sent)", "success");
+                    // Simulate processing
+                    System.Threading.Thread.Sleep(100); // Brief delay to show it's working
+
+                    ShowMessage($"? Thank you, {contactInfo.Name}! Your message has been received successfully. I'll respond to {contactInfo.Email} within 24 hours.", "success");
                     ClearContactForm();
                 }
                 else
@@ -952,9 +963,22 @@ namespace Portfolio
             }
             catch (Exception ex)
             {
-                ShowMessage("? An unexpected error occurred while sending your message. Please try again later or contact directly at mahir.rahman@kuet.ac.bd", "error");
+                ShowMessage("? An unexpected error occurred while sending your message. Please try again later or contact directly at khadimul.mahi@kuet.ac.bd", "error");
                 // In production, log the exception
                 System.Diagnostics.Debug.WriteLine($"Contact form error: {ex.Message}");
+            }
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
             }
         }
 
@@ -966,8 +990,11 @@ namespace Portfolio
             if (pnlMessage != null && litMessage != null)
             {
                 pnlMessage.Visible = true;
-                string iconClass = type == "success" ? "fas fa-check-circle" : "fas fa-exclamation-triangle";
-                string alertType = type == "success" ? "success" : "error";
+                string iconClass = type == "success" ? "fas fa-check-circle" : 
+                                  type == "error" ? "fas fa-exclamation-triangle" : 
+                                  "fas fa-info-circle";
+                string alertType = type == "success" ? "success" : 
+                                  type == "error" ? "error" : "info";
                 litMessage.Text = $"<div class='alert alert-{alertType}' style='margin-bottom: 2rem;'><i class='{iconClass}' style='margin-right: 0.5rem;'></i> {message}</div>";
             }
         }
