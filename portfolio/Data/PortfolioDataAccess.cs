@@ -35,7 +35,7 @@ namespace Portfolio.Data
                 {
                     projects.Add(new Project
                     {
-                        Id = reader.GetInt32("Id"),
+                        Id = Convert.ToInt32(reader["Id"]),
                         Title = reader["Title"].ToString(),
                         Description = reader["Description"].ToString(),
                         DetailedDescription = reader["DetailedDescription"] == DBNull.Value ? "" : reader["DetailedDescription"].ToString(),
@@ -72,7 +72,7 @@ namespace Portfolio.Data
                 {
                     skills.Add(new Skill
                     {
-                        Id = reader.GetInt32("Id"),
+                        Id = Convert.ToInt32(reader["Id"]),
                         Name = reader["Name"].ToString(),
                         Category = reader["Category"] == DBNull.Value ? "" : reader["Category"].ToString(),
                         ProficiencyLevel = Convert.ToInt32(reader["ProficiencyLevel"]),

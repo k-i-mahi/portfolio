@@ -30,9 +30,9 @@ namespace Portfolio
                 gvAchievements.DataSource = dataAccess.GetAllAchievements();
                 gvAchievements.DataBind();
 
-                // Load contacts (you'll need to implement this method in PortfolioDataAccess)
-                // gvContacts.DataSource = dataAccess.GetAllContacts();
-                // gvContacts.DataBind();
+                // Load contacts
+                gvContacts.DataSource = dataAccess.GetAllContacts();
+                gvContacts.DataBind();
             }
             catch (Exception ex)
             {

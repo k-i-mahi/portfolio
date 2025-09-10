@@ -24,23 +24,35 @@ namespace Portfolio
         {
             try
             {
-                // Load Skills grouped by category
-                LoadSkills();
-                
                 // Load Projects
                 var projects = dataAccess.GetAllProjects();
-                rptProjects.DataSource = projects;
-                rptProjects.DataBind();
+                var rptProjects = (Repeater)FindControl("rptProjects");
+                if (rptProjects != null)
+                {
+                    rptProjects.DataSource = projects;
+                    rptProjects.DataBind();
+                }
 
                 // Load Education
                 var education = dataAccess.GetAllEducation();
-                rptEducation.DataSource = education;
-                rptEducation.DataBind();
+                var rptEducation = (Repeater)FindControl("rptEducation");
+                if (rptEducation != null)
+                {
+                    rptEducation.DataSource = education;
+                    rptEducation.DataBind();
+                }
 
                 // Load Achievements
                 var achievements = dataAccess.GetAllAchievements();
-                rptAchievements.DataSource = achievements;
-                rptAchievements.DataBind();
+                var rptAchievements = (Repeater)FindControl("rptAchievements");
+                if (rptAchievements != null)
+                {
+                    rptAchievements.DataSource = achievements;
+                    rptAchievements.DataBind();
+                }
+
+                // Load Skills - we'll create a custom implementation for skills
+                LoadSkillsSection();
             }
             catch (Exception ex)
             {
@@ -49,40 +61,52 @@ namespace Portfolio
             }
         }
 
-        private void LoadSkills()
+        private void LoadSkillsSection()
         {
-            var skills = dataAccess.GetAllSkills();
-            var groupedSkills = skills.GroupBy(s => s.Category).ToList();
-
-            // For this example, we'll create a simple structure
-            // In a real application, you might want to use a more sophisticated approach
-            var skillsHtml = "";
-            
-            foreach (var group in groupedSkills)
+            try
             {
-                skillsHtml += $"<div class='skill-category'><h3>{group.Key}</h3>";
-                foreach (var skill in group)
+                var skills = dataAccess.GetAllSkills();
+                var groupedSkills = skills.GroupBy(s => s.Category).ToList();
+
+                // Create HTML for skills section
+                string skillsHtml = "";
+                
+                foreach (var group in groupedSkills)
                 {
-                    skillsHtml += $@"
-                        <div class='skill-item'>
-                            <div class='skill-name'>
-                                <span>{skill.Name}</span>
-                                <span>{skill.ProficiencyLevel}%</span>
-                            </div>
-                            <div class='skill-bar'>
-                                <div class='skill-progress' data-width='{skill.ProficiencyLevel}'></div>
-                            </div>
-                        </div>";
+                    skillsHtml += $"<div class='skill-category'><h3>{group.Key}</h3>";
+                    foreach (var skill in group.OrderBy(s => s.DisplayOrder))
+                    {
+                        skillsHtml += $@"
+                            <div class='skill-item'>
+                                <div class='skill-name'>
+                                    <span>{skill.Name}</span>
+                                    <span>{skill.ProficiencyLevel}%</span>
+                                </div>
+                                <div class='skill-bar'>
+                                    <div class='skill-progress' data-width='{skill.ProficiencyLevel}'></div>
+                                </div>
+                            </div>";
+                    }
+                    skillsHtml += "</div>";
                 }
-                skillsHtml += "</div>";
-            }
 
-            // Find the skills section and inject HTML
-            var skillsContainer = Page.FindControl("skills").FindControl("container");
-            if (skillsContainer != null)
+                // Add the HTML to the skills container
+                var skillsGrid = FindControl("skills-grid");
+                if (skillsGrid != null)
+                {
+                    var literal = new Literal { Text = skillsHtml };
+                    skillsGrid.Controls.Add(literal);
+                }
+            }
+            catch (Exception ex)
             {
-                var literal = new Literal { Text = skillsHtml };
-                skillsContainer.Controls.Add(literal);
+                // If skills loading fails, add default message
+                var skillsGrid = FindControl("skills-grid");
+                if (skillsGrid != null)
+                {
+                    var literal = new Literal { Text = "<div class='skill-category'><h3>Loading Skills...</h3><p>Skills data will be available once the database is configured.</p></div>" };
+                    skillsGrid.Controls.Add(literal);
+                }
             }
         }
 
@@ -90,25 +114,34 @@ namespace Portfolio
         {
             try
             {
-                var contact = new Contact
-                {
-                    Name = txtName.Text.Trim(),
-                    Email = txtEmail.Text.Trim(),
-                    Phone = txtPhone.Text.Trim(),
-                    Subject = txtSubject.Text.Trim(),
-                    Message = txtMessage.Text.Trim(),
-                    CreatedDate = DateTime.Now,
-                    IsRead = false
-                };
+                var txtName = (TextBox)FindControl("txtName");
+                var txtEmail = (TextBox)FindControl("txtEmail");
+                var txtPhone = (TextBox)FindControl("txtPhone");
+                var txtSubject = (TextBox)FindControl("txtSubject");
+                var txtMessage = (TextBox)FindControl("txtMessage");
 
-                if (dataAccess.SaveContact(contact))
+                if (txtName != null && txtEmail != null && txtMessage != null)
                 {
-                    ShowMessage("Thank you for your message! I'll get back to you soon.", "success");
-                    ClearContactForm();
-                }
-                else
-                {
-                    ShowMessage("Sorry, there was an error sending your message. Please try again.", "error");
+                    var contact = new Contact
+                    {
+                        Name = txtName.Text.Trim(),
+                        Email = txtEmail.Text.Trim(),
+                        Phone = txtPhone?.Text.Trim() ?? "",
+                        Subject = txtSubject?.Text.Trim() ?? "",
+                        Message = txtMessage.Text.Trim(),
+                        CreatedDate = DateTime.Now,
+                        IsRead = false
+                    };
+
+                    if (dataAccess.SaveContact(contact))
+                    {
+                        ShowMessage("Thank you for your message! I'll get back to you soon.", "success");
+                        ClearContactForm();
+                    }
+                    else
+                    {
+                        ShowMessage("Sorry, there was an error sending your message. Please try again.", "error");
+                    }
                 }
             }
             catch (Exception ex)
@@ -119,17 +152,29 @@ namespace Portfolio
 
         private void ShowMessage(string message, string type)
         {
-            pnlMessage.Visible = true;
-            litMessage.Text = $"<div class='alert alert-{type}'>{message}</div>";
+            var pnlMessage = (Panel)FindControl("pnlMessage");
+            var litMessage = (Literal)FindControl("litMessage");
+            
+            if (pnlMessage != null && litMessage != null)
+            {
+                pnlMessage.Visible = true;
+                litMessage.Text = $"<div class='alert alert-{type}'>{message}</div>";
+            }
         }
 
         private void ClearContactForm()
         {
-            txtName.Text = "";
-            txtEmail.Text = "";
-            txtPhone.Text = "";
-            txtSubject.Text = "";
-            txtMessage.Text = "";
+            var txtName = (TextBox)FindControl("txtName");
+            var txtEmail = (TextBox)FindControl("txtEmail");
+            var txtPhone = (TextBox)FindControl("txtPhone");
+            var txtSubject = (TextBox)FindControl("txtSubject");
+            var txtMessage = (TextBox)FindControl("txtMessage");
+
+            if (txtName != null) txtName.Text = "";
+            if (txtEmail != null) txtEmail.Text = "";
+            if (txtPhone != null) txtPhone.Text = "";
+            if (txtSubject != null) txtSubject.Text = "";
+            if (txtMessage != null) txtMessage.Text = "";
         }
     }
 }

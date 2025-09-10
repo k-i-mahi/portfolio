@@ -76,27 +76,8 @@
         <section id="skills" class="section">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <asp:Repeater ID="rptSkills" runat="server">
-                        <HeaderTemplate>
-                            <div class="skill-category">
-                                <h3><%# Container.DataItem %></h3>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-                                <div class="skill-item">
-                                    <div class="skill-name">
-                                        <span><%# Eval("Name") %></span>
-                                        <span><%# Eval("ProficiencyLevel") %>%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-width="<%# Eval("ProficiencyLevel") %>"></div>
-                                    </div>
-                                </div>
-                        </ItemTemplate>
-                        <FooterTemplate>
-                            </div>
-                        </FooterTemplate>
-                    </asp:Repeater>
+                <div class="skills-grid" id="skills-grid" runat="server">
+                    <!-- Skills will be loaded dynamically from code-behind -->
                 </div>
             </div>
         </section>
