@@ -284,7 +284,7 @@ namespace Portfolio
                     foreach (var skill in group.OrderBy(s => s.DisplayOrder))
                     {
                         skillsHtml += $@"
-                            <div class='skill-item>
+                            <div class='skill-item'>
                                 <div class='skill-name'>
                                     <span>{skill.Name}</span>
                                     <span>{skill.ProficiencyLevel}%</span>

@@ -116,8 +116,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DEPLOYMENT_CHECKLIST.md" />
+    <Content Include="ENHANCEMENT_SUMMARY.md" />
     <None Include="packages.config" />
     <Content Include="README.md" />
+    <Content Include="test_application.bat" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

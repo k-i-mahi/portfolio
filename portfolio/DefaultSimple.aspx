@@ -5,14 +5,183 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Professional portfolio of a competitive programmer and software developer from KUET" />
-    <meta name="keywords" content="competitive programming, software developer, KUET, portfolio, web development" />
+    <meta name="description" content="Professional portfolio of Mahir Rahman - competitive programmer and software developer from KUET" />
+    <meta name="keywords" content="competitive programming, software developer, KUET, portfolio, web development, Codeforces, LeetCode, CodeChef" />
     <title>Mahir Rahman - Competitive Programmer & Software Developer | KUET CSE</title>
     <link href="Styles/portfolio.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Additional CSS for enhanced animations -->
+    <style>
+        /* Enhanced animations and styles */
+        .stats-counter {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: block;
+        }
+        
+        .stats-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .programming-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .platform-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .platform-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .platform-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .platform-username {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .platform-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            padding: 1rem;
+            background: var(--bg-color);
+            border-radius: 8px;
+        }
+        
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            animation: particle-float 15s infinite linear;
+        }
+        
+        @keyframes particle-float {
+            0% { 
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0;
+            }
+        }
+        
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.5s ease-in-out;
+        }
+        
+        /* Enhanced responsive design */
+        @media (max-width: 768px) {
+            .programming-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .platform-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-counter {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -28,9 +197,10 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#skills">Skills</a></li>
+                        <li><a href="#competitive">Competitive Programming</a></li>
                         <li><a href="#projects">Projects</a></li>
-                        <li><a href="#education">Education</a></li>
                         <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#education">Education</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                     <div class="nav-toggle" id="navToggle">
@@ -44,12 +214,27 @@
 
         <!-- Hero Section -->
         <section id="home" class="hero">
+            <div class="hero-particles" id="particles"></div>
             <div class="container">
                 <div class="hero-content">
-                    <h1>Mahir Rahman</h1>
-                    <h2>Competitive Programmer & Software Developer</h2>
-                    <p>CSE 3rd Year Student at KUET | Passionate about Problem Solving & Software Development | Building innovative solutions with cutting-edge technologies</p>
-                    <a href="#contact" class="cta-button">
+                    <h1 class="fade-in-up">Mahir Rahman</h1>
+                    <h2 class="typing-cursor" id="heroTitle">Competitive Programmer & Software Developer</h2>
+                    <p class="fade-in-up">CSE 3rd Year Student at KUET | Passionate about Problem Solving & Software Development | Building innovative solutions with cutting-edge technologies</p>
+                    <div class="hero-stats fade-in-up">
+                        <div class="stat-item">
+                            <span class="stats-counter" data-target="500">0</span>
+                            <span class="stats-label">Problems Solved</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stats-counter" data-target="25">0</span>
+                            <span class="stats-label">Contests Participated</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stats-counter" data-target="1456">0</span>
+                            <span class="stats-label">Max Rating</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="cta-button fade-in-up">
                         <i class="fas fa-envelope"></i>
                         Get In Touch
                     </a>
@@ -73,14 +258,14 @@
                             preparing me for complex software development challenges.
                         </p>
                         <p>
-                            I specialize in developing efficient solutions to complex problems and have extensive experience in various programming languages 
-                            and modern technologies. My expertise spans from competitive programming algorithms to full-stack web development, 
-                            with a strong foundation in data structures, algorithms, and software engineering principles.
+                            With over <strong>500+ problems solved</strong> across various online judges and a peak rating of <strong>1456 on Codeforces</strong>, 
+                            I have developed expertise in data structures, algorithms, and optimization techniques. My competitive programming journey 
+                            has not only enhanced my coding skills but also taught me to think critically under pressure.
                         </p>
                         <p>
-                            When I'm not coding, I enjoy participating in programming contests, contributing to open-source projects, 
-                            mentoring junior developers, and continuously learning about emerging technologies in software development. 
-                            My goal is to leverage technology to create innovative solutions that make a positive impact on society.
+                            Beyond competitive programming, I'm passionate about full-stack web development, machine learning, and software engineering. 
+                            I believe in continuous learning and love exploring new technologies. My goal is to leverage my problem-solving skills 
+                            to create innovative solutions that make a positive impact on society.
                         </p>
                         <div class="social-links">
                             <a href="https://linkedin.com/in/mahir-rahman" target="_blank" title="LinkedIn" aria-label="LinkedIn Profile">
@@ -110,6 +295,19 @@
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="skills-grid" id="skillsGrid" runat="server">
                     <!-- Skills will be loaded dynamically from code-behind -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Competitive Programming Section -->
+        <section id="competitive" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Competitive Programming Profiles</h2>
+                <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: var(--text-light);">
+                    My journey across various competitive programming platforms
+                </p>
+                <div class="programming-stats" id="programmingStats" runat="server">
+                    <!-- Programming platform stats will be loaded dynamically -->
                 </div>
             </div>
         </section>
@@ -150,6 +348,35 @@
             </div>
         </section>
 
+        <!-- Achievements Section -->
+        <section id="achievements" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Achievements & Recognition</h2>
+                <div class="achievements-grid">
+                    <asp:Repeater ID="rptAchievements" runat="server">
+                        <ItemTemplate>
+                            <article class="achievement-card">
+                                <div class="achievement-platform">
+                                    <i class="fas fa-medal"></i>
+                                    <%# Eval("Platform") %>
+                                </div>
+                                <h3 class="achievement-title"><%# Eval("Title") %></h3>
+                                <p class="achievement-description"><%# Eval("Description") %></p>
+                                <%# !string.IsNullOrEmpty(Eval("Ranking").ToString()) ? 
+                                    $"<div class='achievement-ranking'><i class='fas fa-trophy'></i> {Eval("Ranking")}</div>" : "" %>
+                                <small class="achievement-date">
+                                    <i class="fas fa-calendar"></i>
+                                    <%# Eval("AchievedDate", "{0:MMMM yyyy}") %>
+                                </small>
+                                <%# !string.IsNullOrEmpty(Eval("CertificateUrl").ToString()) ? 
+                                    $"<br><a href='{Eval("CertificateUrl")}' target='_blank' rel='noopener' class='project-link' style='margin-top: 1rem; display: inline-block;'><i class='fas fa-certificate'></i> View Certificate</a>" : "" %>
+                            </article>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                </div>
+            </div>
+        </section>
+
         <!-- Education Section -->
         <section id="education" class="section fade-in">
             <div class="container">
@@ -171,35 +398,6 @@
                                     </div>
                                 </div>
                                 <%# !string.IsNullOrEmpty(Eval("Description").ToString()) ? $"<p class='education-description'>{Eval("Description")}</p>" : "" %>
-                            </article>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </div>
-            </div>
-        </section>
-
-        <!-- Achievements Section -->
-        <section id="achievements" class="section fade-in">
-            <div class="container">
-                <h2 class="section-title">Competitive Programming Achievements</h2>
-                <div class="achievements-grid">
-                    <asp:Repeater ID="rptAchievements" runat="server">
-                        <ItemTemplate>
-                            <article class="achievement-card">
-                                <div class="achievement-platform">
-                                    <i class="fas fa-medal"></i>
-                                    <%# Eval("Platform") %>
-                                </div>
-                                <h3 class="achievement-title"><%# Eval("Title") %></h3>
-                                <p class="achievement-description"><%# Eval("Description") %></p>
-                                <%# !string.IsNullOrEmpty(Eval("Ranking").ToString()) ? 
-                                    $"<div class='achievement-ranking'><i class='fas fa-trophy'></i> {Eval("Ranking")}</div>" : "" %>
-                                <small class="achievement-date">
-                                    <i class="fas fa-calendar"></i>
-                                    <%# Eval("AchievedDate", "{0:MMMM yyyy}") %>
-                                </small>
-                                <%# !string.IsNullOrEmpty(Eval("CertificateUrl").ToString()) ? 
-                                    $"<br><a href='{Eval("CertificateUrl")}' target='_blank' rel='noopener' class='project-link' style='margin-top: 1rem; display: inline-block;'><i class='fas fa-certificate'></i> View Certificate</a>" : "" %>
                             </article>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -265,7 +463,7 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <p>&copy; <%= DateTime.Now.Year %> Mahir Rahman. All rights reserved. | Built with ASP.NET & ?? | 
+                <p>&copy; <%= DateTime.Now.Year %> Mahir Rahman. All rights reserved. | Built with ASP.NET & C# | 
                 <a href="Admin.aspx" style="color: #fff; text-decoration: none; opacity: 0.7;">Admin</a></p>
             </div>
         </footer>
@@ -274,6 +472,12 @@
     <script>
         // Enhanced JavaScript for better user experience
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize particles
+            createParticles();
+            
+            // Initialize counters
+            initCounters();
+            
             // Mobile Navigation Toggle
             const navToggle = document.getElementById('navToggle');
             const navLinks = document.getElementById('navLinks');
@@ -284,7 +488,6 @@
                     navToggle.classList.toggle('active');
                 });
 
-                // Close mobile menu when clicking on a link
                 navLinks.addEventListener('click', function() {
                     navLinks.classList.remove('active');
                     navToggle.classList.remove('active');
@@ -328,6 +531,11 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        
+                        // Trigger counter animation when section is visible
+                        if (entry.target.id === 'home') {
+                            animateCounters();
+                        }
                     }
                 });
             }, observerOptions);
@@ -337,7 +545,7 @@
                 observer.observe(el);
             });
 
-            // Initial skill animation check
+            // Initial checks
             animateSkills();
             
             // Check on scroll
@@ -404,7 +612,7 @@
 
             // Typing effect for hero section
             const heroTitle = document.querySelector('.hero h2');
-            if (heroTitle) {
+            if (heroTitle && heroTitle.classList.contains('typing-cursor')) {
                 const text = heroTitle.textContent;
                 heroTitle.textContent = '';
                 let i = 0;
@@ -414,12 +622,66 @@
                         if (i < text.length) {
                             heroTitle.textContent += text.charAt(i);
                             i++;
-                            setTimeout(typeWriter, 50);
+                            setTimeout(typeWriter, 100);
                         }
                     };
                     typeWriter();
                 }, 1000);
             }
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            if (particles) {
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDelay = Math.random() * 15 + 's';
+                    particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                    particles.appendChild(particle);
+                }
+            }
+        }
+
+        // Initialize counter animation
+        function initCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                counter.innerText = '0';
+            });
+        }
+
+        // Animate counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const count = +counter.innerText;
+                const increment = target / 100;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(() => animateCounters(), 50);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Enhanced platform card interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const platformCards = document.querySelectorAll('.platform-card');
+            platformCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
         });
     </script>
 </body>
