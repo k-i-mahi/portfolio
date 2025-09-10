@@ -24,6 +24,12 @@ namespace Portfolio
             // Load Competitive Programming Platforms
             LoadCompetitiveProgrammingStats();
             
+            // Load Interests & Activities
+            LoadInterests();
+            
+            // Load Clubs & Organizations
+            LoadClubs();
+            
             // Load Projects
             LoadProjects();
             
@@ -44,16 +50,16 @@ namespace Portfolio
                         <div class='skill-bar'><div class='skill-progress' data-width='95'></div></div>
                     </div>
                     <div class='skill-item'>
+                        <div class='skill-name'><span>Python</span><span>88%</span></div>
+                        <div class='skill-bar'><div class='skill-progress' data-width='88'></div></div>
+                    </div>
+                    <div class='skill-item'>
                         <div class='skill-name'><span>Java</span><span>85%</span></div>
                         <div class='skill-bar'><div class='skill-progress' data-width='85'></div></div>
                     </div>
                     <div class='skill-item'>
                         <div class='skill-name'><span>C#</span><span>80%</span></div>
                         <div class='skill-bar'><div class='skill-progress' data-width='80'></div></div>
-                    </div>
-                    <div class='skill-item'>
-                        <div class='skill-name'><span>Python</span><span>78%</span></div>
-                        <div class='skill-bar'><div class='skill-progress' data-width='78'></div></div>
                     </div>
                     <div class='skill-item'>
                         <div class='skill-name'><span>JavaScript</span><span>75%</span></div>
@@ -86,6 +92,26 @@ namespace Portfolio
                 </div>
                 
                 <div class='skill-category'>
+                    <h3><i class='fas fa-robot'></i> Hardware & Robotics</h3>
+                    <div class='skill-item'>
+                        <div class='skill-name'><span>Arduino Programming</span><span>85%</span></div>
+                        <div class='skill-bar'><div class='skill-progress' data-width='85'></div></div>
+                    </div>
+                    <div class='skill-item'>
+                        <div class='skill-name'><span>Sensor Integration</span><span>82%</span></div>
+                        <div class='skill-bar'><div class='skill-progress' data-width='82'></div></div>
+                    </div>
+                    <div class='skill-item'>
+                        <div class='skill-name'><span>Circuit Design</span><span>78%</span></div>
+                        <div class='skill-bar'><div class='skill-progress' data-width='78'></div></div>
+                    </div>
+                    <div class='skill-item'>
+                        <div class='skill-name'><span>Robotics</span><span>80%</span></div>
+                        <div class='skill-bar'><div class='skill-progress' data-width='80'></div></div>
+                    </div>
+                </div>
+                
+                <div class='skill-category'>
                     <h3><i class='fas fa-globe-americas'></i> Web Development</h3>
                     <div class='skill-item'>
                         <div class='skill-name'><span>ASP.NET</span><span>85%</span></div>
@@ -106,22 +132,22 @@ namespace Portfolio
                 </div>
                 
                 <div class='skill-category'>
-                    <h3><i class='fas fa-database'></i> Database & Tools</h3>
+                    <h3><i class='fas fa-chart-line'></i> Data Science & ML</h3>
                     <div class='skill-item'>
-                        <div class='skill-name'><span>SQL Server</span><span>82%</span></div>
-                        <div class='skill-bar'><div class='skill-progress' data-width='82'></div></div>
+                        <div class='skill-name'><span>Pandas</span><span>80%</span></div>
+                        <div class='skill-bar'><div class='skill-progress' data-width='80'></div></div>
                     </div>
                     <div class='skill-item'>
-                        <div class='skill-name'><span>MySQL</span><span>78%</span></div>
+                        <div class='skill-name'><span>NumPy</span><span>78%</span></div>
                         <div class='skill-bar'><div class='skill-progress' data-width='78'></div></div>
                     </div>
                     <div class='skill-item'>
-                        <div class='skill-name'><span>Git/GitHub</span><span>85%</span></div>
-                        <div class='skill-bar'><div class='skill-progress' data-width='85'></div></div>
+                        <div class='skill-name'><span>Scikit-learn</span><span>75%</span></div>
+                        <div class='skill-bar'><div class='skill-progress' data-width='75'></div></div>
                     </div>
                     <div class='skill-item'>
-                        <div class='skill-name'><span>Visual Studio</span><span>88%</span></div>
-                        <div class='skill-bar'><div class='skill-progress' data-width='88'></div></div>
+                        <div class='skill-name'><span>Data Visualization</span><span>72%</span></div>
+                        <div class='skill-bar'><div class='skill-progress' data-width='72'></div></div>
                     </div>
                 </div>";
 
@@ -328,53 +354,287 @@ namespace Portfolio
             }
         }
 
+        private void LoadInterests()
+        {
+            string interestsHtml = @"
+                <div class='interest-card kaggle-card'>
+                    <div class='interest-icon'>
+                        <i class='fab fa-kaggle'></i>
+                    </div>
+                    <div class='interest-name'>Kaggle Competitions</div>
+                    <div class='interest-description'>Participating in data science and machine learning competitions</div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>15</span>
+                            <span class='stats-label'>Competitions</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>Bronze</span>
+                            <span class='stats-label'>Highest Medal</span>
+                        </div>
+                    </div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>1250</span>
+                            <span class='stats-label'>Ranking Points</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>Expert</span>
+                            <span class='stats-label'>Tier</span>
+                        </div>
+                    </div>
+                    <a href='https://kaggle.com/mahirrahman' target='_blank' class='project-link' style='margin-top: 1rem; display: inline-block;'>
+                        <i class='fas fa-external-link-alt'></i> View Profile
+                    </a>
+                </div>
+
+                <div class='interest-card hardware-card'>
+                    <div class='interest-icon'>
+                        <i class='fas fa-robot'></i>
+                    </div>
+                    <div class='interest-name'>Hardware Projects</div>
+                    <div class='interest-description'>Building robots and embedded systems</div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>8</span>
+                            <span class='stats-label'>Projects Built</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>Arduino</span>
+                            <span class='stats-label'>Primary Platform</span>
+                        </div>
+                    </div>
+                    <div style='margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);'>
+                        <strong>Featured Projects:</strong><br>
+                        • Obstacle Avoiding Robot<br>
+                        • Line Following Robot (LFR)<br>
+                        • Smart Home Automation<br>
+                        • Sensor-based Monitoring System
+                    </div>
+                </div>
+
+                <div class='interest-card chess-card'>
+                    <div class='interest-icon'>
+                        <i class='fas fa-chess'></i>
+                    </div>
+                    <div class='interest-name'>Chess</div>
+                    <div class='interest-description'>Strategic gameplay on online platforms</div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>1650</span>
+                            <span class='stats-label'>Chess.com Rating</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>1580</span>
+                            <span class='stats-label'>Lichess Rating</span>
+                        </div>
+                    </div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>500+</span>
+                            <span class='stats-label'>Games Played</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>72%</span>
+                            <span class='stats-label'>Win Rate</span>
+                        </div>
+                    </div>
+                    <div style='display: flex; gap: 0.5rem; margin-top: 1rem; justify-content: center;'>
+                        <a href='https://chess.com/member/mahir_kuet' target='_blank' class='project-link'>
+                            <i class='fas fa-external-link-alt'></i> Chess.com
+                        </a>
+                        <a href='https://lichess.org/@/mahir_kuet' target='_blank' class='project-link'>
+                            <i class='fas fa-external-link-alt'></i> Lichess
+                        </a>
+                    </div>
+                </div>
+
+                <div class='interest-card photography-card'>
+                    <div class='interest-icon'>
+                        <i class='fas fa-camera'></i>
+                    </div>
+                    <div class='interest-name'>Photography</div>
+                    <div class='interest-description'>Capturing moments and exploring creative visual storytelling</div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>Nature</span>
+                            <span class='stats-label'>Favorite Genre</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>Portrait</span>
+                            <span class='stats-label'>Specialty</span>
+                        </div>
+                    </div>
+                    <div style='margin-top: 1rem; font-size: 0.9rem; color: var(--text-light); text-align: center;'>
+                        <strong>Focus Areas:</strong><br>
+                        Landscape • Portrait • Street Photography<br>
+                        Event Coverage • Technical Documentation
+                    </div>
+                    <div class='photo-gallery' style='margin-top: 1rem;'>
+                        <div class='photo-item'><i class='fas fa-mountain'></i></div>
+                        <div class='photo-item'><i class='fas fa-user'></i></div>
+                        <div class='photo-item'><i class='fas fa-city'></i></div>
+                        <div class='photo-item'><i class='fas fa-calendar-alt'></i></div>
+                    </div>
+                </div>";
+
+            var interestsGrid = (HtmlGenericControl)FindControl("interestsGrid");
+            if (interestsGrid != null)
+            {
+                interestsGrid.InnerHtml = interestsHtml;
+            }
+        }
+
+        private void LoadClubs()
+        {
+            string clubsHtml = @"
+                <div class='club-card club-sgipc'>
+                    <div class='club-icon'>
+                        <i class='fas fa-users-cog'></i>
+                    </div>
+                    <div class='club-name'>SGIPC</div>
+                    <div class='club-description'>Special Group Interest in Competitive Programming</div>
+                    <div style='margin: 1.5rem 0; padding: 1rem; background: var(--bg-color); border-radius: 8px; text-align: left;'>
+                        <strong>Role:</strong> Active Member<br>
+                        <strong>Duration:</strong> 2023 - Present<br>
+                        <strong>Activities:</strong><br>
+                        • Weekly competitive programming sessions<br>
+                        • Problem-solving workshops<br>
+                        • Contest organization and participation<br>
+                        • Mentoring junior members<br>
+                        • Algorithm study groups
+                    </div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>50+</span>
+                            <span class='stats-label'>Sessions Attended</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>15+</span>
+                            <span class='stats-label'>Problems Discussed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='club-card club-hack'>
+                    <div class='club-icon'>
+                        <i class='fas fa-microchip'></i>
+                    </div>
+                    <div class='club-name'>HACK</div>
+                    <div class='club-description'>Hardware Acceleration Club of KUET</div>
+                    <div style='margin: 1.5rem 0; padding: 1rem; background: var(--bg-color); border-radius: 8px; text-align: left;'>
+                        <strong>Role:</strong> Project Member<br>
+                        <strong>Duration:</strong> 2023 - Present<br>
+                        <strong>Activities:</strong><br>
+                        • Hardware project development<br>
+                        • Arduino and microcontroller programming<br>
+                        • Robot building workshops<br>
+                        • IoT project implementations<br>
+                        • Technical documentation
+                    </div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>8</span>
+                            <span class='stats-label'>Projects Completed</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>25+</span>
+                            <span class='stats-label'>Workshop Hours</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='club-card'>
+                    <div class='club-icon'>
+                        <i class='fas fa-graduation-cap'></i>
+                    </div>
+                    <div class='club-name'>KUET Programming Club</div>
+                    <div class='club-description'>Official Programming Club of KUET</div>
+                    <div style='margin: 1.5rem 0; padding: 1rem; background: var(--bg-color); border-radius: 8px; text-align: left;'>
+                        <strong>Role:</strong> Executive Member<br>
+                        <strong>Duration:</strong> 2022 - Present<br>
+                        <strong>Activities:</strong><br>
+                        • Organizing intra-university contests<br>
+                        • Training sessions for ICPC<br>
+                        • Workshops on advanced algorithms<br>
+                        • Coordination with other universities<br>
+                        • Event management and logistics
+                    </div>
+                    <div class='platform-stats'>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>12</span>
+                            <span class='stats-label'>Events Organized</span>
+                        </div>
+                        <div class='stat-item'>
+                            <span class='stats-counter'>300+</span>
+                            <span class='stats-label'>Students Trained</span>
+                        </div>
+                    </div>
+                </div>";
+
+            var clubsGrid = (HtmlGenericControl)FindControl("clubsGrid");
+            if (clubsGrid != null)
+            {
+                clubsGrid.InnerHtml = clubsHtml;
+            }
+        }
+
         private void LoadProjects()
         {
             var projects = new List<dynamic>
             {
                 new {
+                    Title = "Obstacle Avoiding Robot",
+                    Description = "Autonomous robot using ultrasonic sensors for navigation and obstacle detection",
+                    DetailedDescription = "Built an intelligent obstacle-avoiding robot using Arduino Uno, ultrasonic sensors (HC-SR04), servo motors, and custom pathfinding algorithms. The robot can navigate complex environments autonomously, detect obstacles in real-time, and choose optimal paths. Features include distance measurement, servo-controlled sensor scanning, motor control, and LED indicators for status feedback.",
+                    Technologies = "Arduino, C++, Ultrasonic Sensors, Servo Motors, Motor Drivers",
+                    GitHubLink = "https://github.com/k-i-mahi/obstacle-avoiding-robot",
+                    LiveDemoLink = "",
+                    ImageUrl = ""
+                },
+                new {
+                    Title = "Line Following Robot (LFR)",
+                    Description = "Precision line-following robot for competitive robotics with PID control",
+                    DetailedDescription = "Developed a high-precision line-following robot for competitive robotics using IR sensors, PID control algorithm, and optimized motor control. The robot demonstrates excellent line-tracking capabilities, smooth turns, and adaptive speed control. Implemented advanced features like junction detection, path optimization, and real-time sensor calibration.",
+                    Technologies = "Arduino, PID Control, IR Sensors, Motor Controllers, C++",
+                    GitHubLink = "https://github.com/k-i-mahi/line-following-robot",
+                    LiveDemoLink = "",
+                    ImageUrl = ""
+                },
+                new {
                     Title = "Competitive Programming Platform",
                     Description = "A comprehensive online judge system similar to Codeforces with real-time judging capabilities",
-                    DetailedDescription = "Built a full-stack competitive programming platform featuring automatic code compilation and execution, real-time contest rankings, problem management system, user authentication, and comprehensive analytics dashboard. Supports multiple programming languages including C++, Java, Python, and C#.",
-                    Technologies = "C#, ASP.NET Core, SQL Server, SignalR, Docker",
+                    DetailedDescription = "Built a full-stack competitive programming platform featuring automatic code compilation and execution, real-time contest rankings, problem management system, user authentication, and comprehensive analytics dashboard. Supports multiple programming languages including C++, Java, Python, and C#. Includes features like plagiarism detection, contest scheduling, and performance analytics.",
+                    Technologies = "C#, ASP.NET Core, SQL Server, SignalR, Docker, Redis",
                     GitHubLink = "https://github.com/k-i-mahi/online-judge-system",
                     LiveDemoLink = "https://cpplatform.mahirrahman.com",
                     ImageUrl = ""
                 },
                 new {
-                    Title = "Algorithm Visualizer Pro",
-                    Description = "Interactive educational tool for visualizing complex algorithms and data structures",
-                    DetailedDescription = "Created an advanced algorithm visualization platform that helps students understand sorting algorithms, graph algorithms, tree operations, and dynamic programming solutions through interactive animations. Features step-by-step execution, complexity analysis, and code comparison.",
-                    Technologies = "React.js, D3.js, Node.js, Express, MongoDB",
-                    GitHubLink = "https://github.com/k-i-mahi/algorithm-visualizer",
-                    LiveDemoLink = "https://algoviz.mahirrahman.com",
+                    Title = "Kaggle Competition Solutions",
+                    Description = "Collection of machine learning solutions for various Kaggle competitions",
+                    DetailedDescription = "Comprehensive repository containing solutions for 15+ Kaggle competitions across different domains including tabular data, computer vision, and NLP. Features ensemble methods, feature engineering techniques, model optimization, and detailed analysis notebooks. Achieved bronze medal in Titanic competition and top 20% finish in House Prices prediction.",
+                    Technologies = "Python, Pandas, Scikit-learn, XGBoost, TensorFlow, Jupyter",
+                    GitHubLink = "https://github.com/k-i-mahi/kaggle-solutions",
+                    LiveDemoLink = "https://kaggle.com/mahirrahman",
                     ImageUrl = ""
                 },
                 new {
-                    Title = "Smart Contest Management System",
-                    Description = "Complete solution for organizing and managing programming contests",
-                    DetailedDescription = "Developed a comprehensive contest management system for educational institutions featuring contest creation, participant registration, real-time leaderboards, automatic plagiarism detection, and detailed performance analytics. Used by KUET Programming Club for organizing internal contests.",
-                    Technologies = "ASP.NET Web Forms, C#, SQL Server, Bootstrap, Chart.js",
-                    GitHubLink = "https://github.com/k-i-mahi/contest-management",
+                    Title = "Smart Home Automation System",
+                    Description = "IoT-based home automation system with mobile app control and voice commands",
+                    DetailedDescription = "Developed a comprehensive smart home automation system using ESP32, sensors, and mobile application. Features include remote control of lights, fans, and appliances, voice command integration, temperature and humidity monitoring, security alerts, and energy consumption tracking. Implemented RESTful APIs for seamless communication between hardware and mobile app.",
+                    Technologies = "ESP32, Arduino IDE, Firebase, Android Studio, Java, IoT Sensors",
+                    GitHubLink = "https://github.com/k-i-mahi/smart-home-automation",
                     LiveDemoLink = "",
                     ImageUrl = ""
                 },
                 new {
-                    Title = "University Academic Portal",
-                    Description = "Digital transformation solution for academic administration",
-                    DetailedDescription = "Built a comprehensive academic management system for university operations including student enrollment, course management, grade tracking, attendance monitoring, and automated report generation. Implemented role-based access control for students, faculty, and administrators.",
-                    Technologies = "ASP.NET MVC, Entity Framework, SQL Server, jQuery",
-                    GitHubLink = "https://github.com/k-i-mahi/academic-portal",
+                    Title = "Chess Game Analysis Tool",
+                    Description = "Python-based chess game analyzer with position evaluation and move suggestions",
+                    DetailedDescription = "Created an advanced chess analysis tool that can analyze games, evaluate positions, suggest optimal moves, and identify tactical patterns. Features include integration with chess engines, PGN file support, opening database, endgame tablebase integration, and visual board representation. Useful for improving chess skills and game analysis.",
+                    Technologies = "Python, Stockfish Engine, Chess.py, Tkinter, PGN Parser",
+                    GitHubLink = "https://github.com/k-i-mahi/chess-analyzer",
                     LiveDemoLink = "",
-                    ImageUrl = ""
-                },
-                new {
-                    Title = "Real-time Chat Application",
-                    Description = "Modern messaging platform with advanced features",
-                    DetailedDescription = "Developed a real-time chat application with features like group messaging, file sharing, emoji support, message encryption, and online status indicators. Implemented using modern web technologies with focus on performance and user experience.",
-                    Technologies = "React.js, Socket.io, Node.js, Express, MongoDB",
-                    GitHubLink = "https://github.com/k-i-mahi/realtime-chat",
-                    LiveDemoLink = "https://chat.mahirrahman.com",
                     ImageUrl = ""
                 }
             };
@@ -399,7 +659,7 @@ namespace Portfolio
                     StartDate = new DateTime(2022, 1, 1),
                     EndDate = (DateTime?)null,
                     IsCurrent = true,
-                    Description = "Currently pursuing B.Sc. in Computer Science and Engineering with specialization in algorithms, software engineering, and competitive programming. Active member of KUET Programming Club and ACM Student Chapter. Relevant coursework: Data Structures, Algorithms, Database Systems, Software Engineering, Computer Networks, Operating Systems."
+                    Description = "Currently pursuing B.Sc. in Computer Science and Engineering with specialization in algorithms, software engineering, and competitive programming. Active member of KUET Programming Club, SGIPC, and HACK club. Relevant coursework: Data Structures & Algorithms, Database Systems, Software Engineering, Computer Networks, Operating Systems, Artificial Intelligence, Machine Learning, and Digital Logic Design."
                 },
                 new {
                     Institution = "Bogura Cantonment Public School & College",
@@ -409,7 +669,7 @@ namespace Portfolio
                     StartDate = new DateTime(2019, 6, 1),
                     EndDate = new DateTime(2021, 5, 31),
                     IsCurrent = false,
-                    Description = "Completed HSC in Science group with perfect GPA 5.00. Concentrated on Mathematics, Physics, Chemistry, and ICT. Participated in various programming contests, mathematics olympiads, and science fairs. Awarded as the best student in ICT."
+                    Description = "Completed HSC in Science group with perfect GPA 5.00. Concentrated on Mathematics, Physics, Chemistry, and ICT. Participated in various programming contests, mathematics olympiads, and science fairs. Awarded as the best student in ICT. Led the school programming team and organized coding workshops for junior students."
                 },
                 new {
                     Institution = "Bogura Cantonment Public School & College",
@@ -419,7 +679,7 @@ namespace Portfolio
                     StartDate = new DateTime(2017, 1, 1),
                     EndDate = new DateTime(2019, 5, 31),
                     IsCurrent = false,
-                    Description = "Completed SSC in Science group with perfect GPA 5.00. Strong foundation in Mathematics, Science, and ICT. Participated in district-level science olympiad and programming competitions."
+                    Description = "Completed SSC in Science group with perfect GPA 5.00. Strong foundation in Mathematics, Science, and ICT. Participated in district-level science olympiad and programming competitions. Started competitive programming journey during this period and built first programming projects."
                 }
             };
 
@@ -438,15 +698,31 @@ namespace Portfolio
                 new {
                     Title = "ACM ICPC Asia Dhaka Regional 2024",
                     Platform = "ACM ICPC",
-                    Description = "Successfully qualified for ACM ICPC Asia Dhaka Regional Contest 2024 representing Khulna University of Engineering & Technology",
+                    Description = "Successfully qualified for ACM ICPC Asia Dhaka Regional Contest 2024 representing Khulna University of Engineering & Technology with team 'KUET_CodeCrafters'",
                     Ranking = "Regional Qualifier - Team Rank: 25th",
                     AchievedDate = new DateTime(2024, 10, 15),
                     CertificateUrl = ""
                 },
                 new {
+                    Title = "Kaggle Competition Bronze Medal",
+                    Platform = "Kaggle",
+                    Description = "Achieved Bronze Medal in Kaggle's 'Spaceship Titanic' machine learning competition with top 15% finish among 2000+ participants",
+                    Ranking = "Bronze Medal - Top 15%",
+                    AchievedDate = new DateTime(2024, 9, 28),
+                    CertificateUrl = ""
+                },
+                new {
+                    Title = "HACK Club Best Hardware Project",
+                    Platform = "HACK - KUET",
+                    Description = "Won Best Hardware Project award for developing an advanced obstacle-avoiding robot with AI-based pathfinding at KUET Hardware Exhibition 2024",
+                    Ranking = "1st Place - Best Project Award",
+                    AchievedDate = new DateTime(2024, 9, 15),
+                    CertificateUrl = ""
+                },
+                new {
                     Title = "CodeChef Long Challenge Winner",
                     Platform = "CodeChef",
-                    Description = "Secured 1st position in CodeChef October Long Challenge 2024 with perfect score in all problems",
+                    Description = "Secured 1st position in CodeChef October Long Challenge 2024 with perfect score in all problems in Division 2 category",
                     Ranking = "1st Place - Division 2",
                     AchievedDate = new DateTime(2024, 10, 8),
                     CertificateUrl = ""
@@ -462,15 +738,23 @@ namespace Portfolio
                 new {
                     Title = "KUET Intra-University Programming Contest",
                     Platform = "KUET Programming Club",
-                    Description = "Won 2nd place in KUET Intra-University Programming Contest 2024 among 150+ participants",
+                    Description = "Won 2nd place in KUET Intra-University Programming Contest 2024 among 150+ participants in individual category",
                     Ranking = "2nd Place - Individual Category",
                     AchievedDate = new DateTime(2024, 8, 15),
                     CertificateUrl = ""
                 },
                 new {
+                    Title = "Chess Tournament Runner-up",
+                    Platform = "KUET Chess Club",
+                    Description = "Secured 2nd position in KUET Inter-Department Chess Championship 2024 representing CSE department",
+                    Ranking = "2nd Place - Inter-Department",
+                    AchievedDate = new DateTime(2024, 7, 22),
+                    CertificateUrl = ""
+                },
+                new {
                     Title = "LeetCode Contest Global Ranking",
                     Platform = "LeetCode",
-                    Description = "Achieved top 5% global ranking in LeetCode Weekly Contest 367 with all problems solved correctly",
+                    Description = "Achieved top 5% global ranking in LeetCode Weekly Contest 367 with all problems solved correctly within time limit",
                     Ranking = "Global Rank: 485/12,000+",
                     AchievedDate = new DateTime(2024, 7, 28),
                     CertificateUrl = ""
@@ -478,7 +762,7 @@ namespace Portfolio
                 new {
                     Title = "HackerRank Problem Solving Gold Badge",
                     Platform = "HackerRank",
-                    Description = "Earned Gold badge in Problem Solving domain with 5-star rating by solving 90+ algorithmic challenges",
+                    Description = "Earned Gold badge in Problem Solving domain with 5-star rating by solving 95+ algorithmic challenges across various difficulty levels",
                     Ranking = "5 Stars - Gold Badge",
                     AchievedDate = new DateTime(2024, 6, 10),
                     CertificateUrl = ""
@@ -486,17 +770,9 @@ namespace Portfolio
                 new {
                     Title = "National High School Programming Contest",
                     Platform = "Bangladesh Olympiad on Informatics",
-                    Description = "Secured 3rd position in National High School Programming Contest 2021 representing Bogura district",
+                    Description = "Secured 3rd position in National High School Programming Contest 2021 representing Bogura district with excellent performance in algorithms",
                     Ranking = "3rd Place - National Level",
                     AchievedDate = new DateTime(2021, 2, 15),
-                    CertificateUrl = ""
-                },
-                new {
-                    Title = "Perfect Academic Performance",
-                    Platform = "Academic Excellence",
-                    Description = "Maintained perfect GPA 5.00 in both SSC and HSC examinations with outstanding performance in Mathematics and ICT",
-                    Ranking = "GPA 5.00/5.00",
-                    AchievedDate = new DateTime(2021, 7, 30),
                     CertificateUrl = ""
                 }
             };
@@ -532,7 +808,6 @@ namespace Portfolio
             catch (Exception ex)
             {
                 ShowMessage("An unexpected error occurred while sending your message. Please try again later.", "error");
-                // In production, log the exception: Logger.LogError(ex, "Contact form submission error");
             }
         }
 

@@ -5,17 +5,79 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Professional portfolio of Mahir Rahman - competitive programmer and software developer from KUET" />
-    <meta name="keywords" content="competitive programming, software developer, KUET, portfolio, web development, Codeforces, LeetCode, CodeChef" />
-    <title>Mahir Rahman - Competitive Programmer & Software Developer | KUET CSE</title>
+    <meta name="description" content="Professional portfolio of Mahir Rahman - competitive programmer, Kaggle competitor, hardware enthusiast, and software developer from KUET" />
+    <meta name="keywords" content="competitive programming, Kaggle, hardware projects, robotics, chess, photography, software developer, KUET, portfolio, web development, Codeforces, LeetCode, CodeChef" />
+    <title>Mahir Rahman - Competitive Programmer & Tech Enthusiast | KUET CSE</title>
     <link href="Styles/portfolio.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Additional CSS for enhanced animations -->
+    <!-- Enhanced CSS with Dark Theme Support -->
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.15);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-success: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #1a252f;
+            --secondary-color: #64b5f6;
+            --accent-color: #ff6b6b;
+            --success-color: #4caf50;
+            --warning-color: #ffc107;
+            --text-color: #e8eaed;
+            --text-light: #9aa0a6;
+            --bg-color: #121212;
+            --white: #1e1e1e;
+            --shadow: 0 10px 30px rgba(0,0,0,0.3);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.4);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            --gradient-success: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
         /* Enhanced animations and styles */
         .stats-counter {
             font-size: 2.5rem;
@@ -31,14 +93,14 @@
             letter-spacing: 1px;
         }
         
-        .programming-stats {
+        .programming-stats, .interests-grid, .clubs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
         
-        .platform-card {
+        .platform-card, .interest-card, .club-card {
             background: var(--white);
             padding: 2rem;
             border-radius: var(--border-radius);
@@ -47,9 +109,10 @@
             transition: var(--transition);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
-        .platform-card::before {
+        .platform-card::before, .interest-card::before, .club-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -59,12 +122,12 @@
             background: var(--gradient-primary);
         }
         
-        .platform-card:hover {
+        .platform-card:hover, .interest-card:hover, .club-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
         }
         
-        .platform-icon {
+        .platform-icon, .interest-icon, .club-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
             background: var(--gradient-primary);
@@ -73,14 +136,14 @@
             background-clip: text;
         }
         
-        .platform-name {
+        .platform-name, .interest-name, .club-name {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--primary-color);
         }
         
-        .platform-username {
+        .platform-username, .interest-description, .club-description {
             color: var(--text-light);
             margin-bottom: 1rem;
             font-style: italic;
@@ -107,27 +170,6 @@
         @keyframes blink {
             0%, 50% { opacity: 1; }
             51%, 100% { opacity: 0; }
-        }
-        
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        
-        .floating-element {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 20s infinite linear;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100px) rotate(360deg); }
         }
         
         .hero-particles {
@@ -158,18 +200,35 @@
                 opacity: 0;
             }
         }
-        
-        .progress-ring {
-            transform: rotate(-90deg);
+
+        /* Special styling for different interest categories */
+        .kaggle-card::before {
+            background: linear-gradient(135deg, #20beff 0%, #1565c0 100%);
         }
-        
-        .progress-ring-circle {
-            transition: stroke-dashoffset 0.5s ease-in-out;
+
+        .chess-card::before {
+            background: linear-gradient(135deg, #795548 0%, #3e2723 100%);
+        }
+
+        .hardware-card::before {
+            background: linear-gradient(135deg, #ff9800 0%, #e65100 100%);
+        }
+
+        .photography-card::before {
+            background: linear-gradient(135deg, #9c27b0 0%, #4a148c 100%);
+        }
+
+        .club-sgipc::before {
+            background: linear-gradient(135deg, #4caf50 0%, #1b5e20 100%);
+        }
+
+        .club-hack::before {
+            background: linear-gradient(135deg, #ff5722 0%, #bf360c 100%);
         }
         
         /* Enhanced responsive design */
         @media (max-width: 768px) {
-            .programming-stats {
+            .programming-stats, .interests-grid, .clubs-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -180,11 +239,49 @@
             .stats-counter {
                 font-size: 2rem;
             }
+
+            .theme-toggle {
+                top: 80px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        /* Gallery styles for photography */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Theme">
+            <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+
         <!-- Header -->
         <header class="header" id="header">
             <div class="container">
@@ -197,7 +294,9 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#skills">Skills</a></li>
-                        <li><a href="#competitive">Competitive Programming</a></li>
+                        <li><a href="#competitive">Programming</a></li>
+                        <li><a href="#interests">Interests</a></li>
+                        <li><a href="#clubs">Clubs</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#achievements">Achievements</a></li>
                         <li><a href="#education">Education</a></li>
@@ -218,20 +317,20 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="fade-in-up">Mahir Rahman</h1>
-                    <h2 class="typing-cursor" id="heroTitle">Competitive Programmer & Software Developer</h2>
-                    <p class="fade-in-up">CSE 3rd Year Student at KUET | Passionate about Problem Solving & Software Development | Building innovative solutions with cutting-edge technologies</p>
+                    <h2 class="typing-cursor" id="heroTitle">Competitive Programmer & Tech Enthusiast</h2>
+                    <p class="fade-in-up">CSE 3rd Year Student at KUET | Competitive Programming | Kaggle Competitions | Hardware Projects | Chess Player | Photography Enthusiast</p>
                     <div class="hero-stats fade-in-up">
                         <div class="stat-item">
                             <span class="stats-counter" data-target="500">0</span>
                             <span class="stats-label">Problems Solved</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stats-counter" data-target="25">0</span>
-                            <span class="stats-label">Contests Participated</span>
+                            <span class="stats-counter" data-target="15">0</span>
+                            <span class="stats-label">Kaggle Competitions</span>
                         </div>
                         <div class="stat-item">
                             <span class="stats-counter" data-target="1456">0</span>
-                            <span class="stats-label">Max Rating</span>
+                            <span class="stats-label">Max CP Rating</span>
                         </div>
                     </div>
                     <a href="#contact" class="cta-button fade-in-up">
@@ -254,18 +353,19 @@
                     <div class="about-text">
                         <p>
                             I am a passionate Computer Science and Engineering student at Khulna University of Engineering & Technology (KUET), 
-                            currently in my 3rd year. My journey in competitive programming has shaped my problem-solving skills and algorithmic thinking, 
-                            preparing me for complex software development challenges.
+                            currently in my 3rd year. My journey spans across multiple domains - from competitive programming and Kaggle competitions 
+                            to hardware projects and creative pursuits like chess and photography.
                         </p>
                         <p>
-                            With over <strong>500+ problems solved</strong> across various online judges and a peak rating of <strong>1456 on Codeforces</strong>, 
-                            I have developed expertise in data structures, algorithms, and optimization techniques. My competitive programming journey 
-                            has not only enhanced my coding skills but also taught me to think critically under pressure.
+                            With over <strong>500+ problems solved</strong> across various online judges, <strong>15+ Kaggle competitions</strong> participated, 
+                            and hands-on experience in building <strong>obstacle-avoiding robots and line-following robots</strong>, I bring a unique blend 
+                            of theoretical knowledge and practical skills. My peak rating of <strong>1456 on Codeforces</strong> reflects my dedication 
+                            to algorithmic problem-solving.
                         </p>
                         <p>
-                            Beyond competitive programming, I'm passionate about full-stack web development, machine learning, and software engineering. 
-                            I believe in continuous learning and love exploring new technologies. My goal is to leverage my problem-solving skills 
-                            to create innovative solutions that make a positive impact on society.
+                            As an active member of <strong>SGIPC (Special Group Interest in Competitive Programming)</strong> and 
+                            <strong>HACK (Hardware Acceleration Club of KUET)</strong>, I continuously engage with like-minded peers. 
+                            When not coding or building robots, you'll find me playing chess on Chess.com and Lichess, or capturing moments through photography.
                         </p>
                         <div class="social-links">
                             <a href="https://linkedin.com/in/mahir-rahman" target="_blank" title="LinkedIn" aria-label="LinkedIn Profile">
@@ -277,8 +377,11 @@
                             <a href="https://codeforces.com/profile/mahir_kuet" target="_blank" title="Codeforces" aria-label="Codeforces Profile">
                                 <i class="fas fa-trophy"></i>
                             </a>
-                            <a href="https://codechef.com/users/mahir_kuet" target="_blank" title="CodeChef" aria-label="CodeChef Profile">
-                                <i class="fas fa-code"></i>
+                            <a href="https://kaggle.com/mahirrahman" target="_blank" title="Kaggle" aria-label="Kaggle Profile">
+                                <i class="fab fa-kaggle"></i>
+                            </a>
+                            <a href="https://chess.com/member/mahir_kuet" target="_blank" title="Chess.com" aria-label="Chess.com Profile">
+                                <i class="fas fa-chess"></i>
                             </a>
                             <a href="mailto:mahir.rahman@kuet.ac.bd" title="Email" aria-label="Send Email">
                                 <i class="fas fa-envelope"></i>
@@ -308,6 +411,32 @@
                 </p>
                 <div class="programming-stats" id="programmingStats" runat="server">
                     <!-- Programming platform stats will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Interests & Activities Section -->
+        <section id="interests" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Interests & Activities</h2>
+                <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: var(--text-light);">
+                    Beyond programming - exploring diverse domains and creative pursuits
+                </p>
+                <div class="interests-grid" id="interestsGrid" runat="server">
+                    <!-- Interests will be loaded dynamically from code-behind -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Clubs & Organizations Section -->
+        <section id="clubs" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Clubs & Organizations</h2>
+                <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: var(--text-light);">
+                    Active participation in technical and academic communities
+                </p>
+                <div class="clubs-grid" id="clubsGrid" runat="server">
+                    <!-- Clubs will be loaded dynamically from code-behind -->
                 </div>
             </div>
         </section>
@@ -470,13 +599,26 @@
     </form>
 
     <script>
-        // Enhanced JavaScript for better user experience
+        // Enhanced JavaScript with Dark Theme Support
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize theme
+            initializeTheme();
+            
             // Initialize particles
             createParticles();
             
             // Initialize counters
             initCounters();
+            
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    toggleTheme();
+                });
+            }
             
             // Mobile Navigation Toggle
             const navToggle = document.getElementById('navToggle');
@@ -630,6 +772,29 @@
             }
         });
 
+        // Theme Management Functions
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const themeIcon = document.getElementById('themeIcon');
+            if (themeIcon) {
+                themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        }
+
         // Create floating particles
         function createParticles() {
             const particles = document.getElementById('particles');
@@ -670,10 +835,10 @@
             });
         }
 
-        // Enhanced platform card interactions
+        // Enhanced card interactions
         document.addEventListener('DOMContentLoaded', function() {
-            const platformCards = document.querySelectorAll('.platform-card');
-            platformCards.forEach(card => {
+            const interactiveCards = document.querySelectorAll('.platform-card, .interest-card, .club-card');
+            interactiveCards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-10px) scale(1.02)';
                 });
