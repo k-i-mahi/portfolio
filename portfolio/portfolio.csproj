@@ -75,6 +75,7 @@
     <Content Include="DefaultSimple.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\profile-hero.jpg" />
     <Content Include="Images\README.txt" />
     <Content Include="Scripts\codeforces-api.js" />
     <Content Include="Simple.aspx" />
@@ -144,6 +145,7 @@
     <Content Include="PORTFOLIO_FIXES_COMPLETE.md" />
     <Content Include="RUN_PORTFOLIO_FIXED.bat" />
     <Content Include="PORTFOLIO_FIXED_README.md" />
+    <Content Include="PROFILE_IMAGE_INSTRUCTIONS.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

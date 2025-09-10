@@ -205,7 +205,7 @@
             }
         }
 
-        /* Enhanced Navigation */
+        /* Enhanced Navigation - Increased height for more padding */
         .header {
             position: fixed;
             top: 0;
@@ -216,6 +216,7 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
             transition: var(--transition);
+            padding: 10px 0; /* Added vertical padding to header */
         }
 
         [data-theme="dark"] .header {
@@ -235,8 +236,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
-            min-height: 70px;
+            padding: 1.5rem 0; /* Increased from 1rem to 1.5rem */
+            min-height: 80px; /* Increased from 70px to 80px */
         }
 
         .logo {
@@ -263,12 +264,12 @@
         .nav-links a {
             color: var(--text-color);
             text-decoration: none;
-            padding: 0.5rem 0.8rem;
+            padding: 0.8rem 1rem; /* Increased padding from 0.5rem 0.8rem */
             border-radius: var(--border-radius-sm);
             transition: var(--transition);
             font-weight: 500;
             position: relative;
-            font-size: 0.85rem;
+            font-size: 0.9rem; /* Slightly increased from 0.85rem */
         }
 
         .nav-links a::before {
@@ -327,11 +328,11 @@
             transform: rotate(-45deg) translate(7px, -6px);
         }
 
-        /* Enhanced Hero Section - Further lowered position */
+        /* Enhanced Hero Section - Much more padding below navigation */
         .hero {
             background: var(--gradient-hero);
             color: white;
-            padding: 160px 0 80px; /* Increased from 120px to 160px */
+            padding: 200px 0 100px; /* Significantly increased from 160px to 200px */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -353,23 +354,81 @@
                 radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
         }
 
+        /* Hero Profile Image Styles - Enhanced and More Prominent */
+        .hero-profile-img {
+            margin: 0 0 2.5rem 0; /* Increased bottom margin */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .profile-hero-img {
+            width: 220px; /* Increased from 200px */
+            height: 220px; /* Increased from 200px */
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.4); /* Increased border width */
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.4), /* Enhanced shadow */
+                0 0 0 10px rgba(255, 255, 255, 0.1),
+                0 0 40px rgba(102, 126, 234, 0.3); /* Enhanced glow */
+            object-fit: cover;
+            transition: var(--transition-slow);
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 10;
+            animation: float 6s ease-in-out infinite; /* Added floating animation */
+        }
+
+        .profile-hero-img:hover {
+            transform: scale(1.1) rotate(5deg); /* Added slight rotation */
+            border-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 15px rgba(255, 255, 255, 0.2),
+                0 0 50px rgba(102, 126, 234, 0.6);
+        }
+
+        .profile-hero-placeholder {
+            width: 220px; /* Increased from 200px */
+            height: 220px; /* Increased from 200px */
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15); /* Slightly more opaque */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.9); /* More opaque */
+            font-size: 5.5rem; /* Increased font size */
+            border: 5px solid rgba(255, 255, 255, 0.4); /* Increased border */
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile-hero-placeholder:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Enhanced Hero Content Spacing */
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px; /* Increased from 800px */
             margin: 0 auto;
-            padding-top: 2rem; /* Increased back to 2rem for better spacing */
+            padding-top: 2rem; /* Increased padding */
         }
 
         .hero h1 {
             color: white;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem; /* Increased from 1.5rem */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero-subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 2rem);
-            margin-bottom: 1.5rem;
+            font-size: clamp(1.3rem, 2.5vw, 2.2rem); /* Slightly increased */
+            margin-bottom: 2rem; /* Increased from 1.5rem */
             opacity: 0.9;
             font-weight: 400;
             color: white;
@@ -377,72 +436,30 @@
         }
 
         .hero-description {
-            font-size: clamp(1rem, 1.8vw, 1.3rem);
-            margin-bottom: 3rem;
-            opacity: 0.8;
-            max-width: 600px;
+            font-size: clamp(1.1rem, 1.8vw, 1.4rem); /* Slightly increased */
+            margin-bottom: 3.5rem; /* Increased from 3rem */
+            opacity: 0.85;
+            max-width: 700px; /* Increased from 600px */
             margin-left: auto;
             margin-right: auto;
             color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-        }
-
-        /* Enhanced Stats */
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            padding: 2rem 1.5rem;
-            border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px) scale(1.05);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .stats-counter {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: white;
-            display: block;
-            font-family: var(--font-mono);
-        }
-
-        .stats-label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-            margin-top: 0.5rem;
+            line-height: 1.7; /* Increased line height */
         }
 
         /* Enhanced CTA Button */
         .cta-button {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.7rem; /* Increased gap */
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 15px 35px;
+            padding: 18px 40px; /* Increased padding */
             text-decoration: none;
             border-radius: 50px;
             transition: var(--transition);
             font-weight: 600;
-            font-size: 1.1rem;
-            margin-top: 2rem;
+            font-size: 1.2rem; /* Increased from 1.1rem */
+            margin-top: 2.5rem; /* Increased margin */
             border: 2px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
         }
@@ -456,7 +473,7 @@
 
         /* Enhanced Sections */
         .section {
-            padding: 100px 0;
+            padding: 120px 0; /* Increased from 100px */
             position: relative;
         }
 
@@ -608,7 +625,7 @@
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
         }
 
         .fade-in-up {
@@ -700,21 +717,21 @@
             }
 
             .hero {
-                padding: 140px 0 60px; /* Increased for mobile */
+                padding: 160px 0 80px; /* Increased for mobile */
                 text-align: center;
             }
 
             .hero-content {
-                padding-top: 1rem; /* Reduced for mobile */
+                padding-top: 1rem;
             }
 
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+            .profile-hero-img, .profile-hero-placeholder {
+                width: 180px; /* Smaller on mobile but still prominent */
+                height: 180px;
             }
 
             .section {
-                padding: 60px 0;
+                padding: 80px 0; /* Increased from 60px */
             }
 
             .card-grid {
@@ -759,11 +776,16 @@
             }
 
             .hero {
-                padding: 120px 0 50px; /* Increased for small screens */
+                padding: 140px 0 70px; /* Increased for small screens */
             }
 
             .hero-content {
                 padding-top: 0.5rem;
+            }
+
+            .profile-hero-img, .profile-hero-placeholder {
+                width: 160px; /* Even smaller on very small screens */
+                height: 160px;
             }
         }
 
@@ -883,6 +905,14 @@
             <div class="hero-particles" id="particles"></div>
             <div class="container">
                 <div class="hero-content">
+                    <!-- Profile Image -->
+                    <div class="hero-profile-img fade-in-up loading">
+                        <img src="Images/profile-hero.jpg" alt="Khadimul Islam Mahi - Profile Photo" class="profile-hero-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="profile-hero-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+
                     <h1 class="fade-in-up loading">
                         Hello, I'm <span class="text-gradient">Khadimul Islam Mahi</span>
                     </h1>
@@ -892,26 +922,6 @@
                         CSE 3rd Year Student at KUET | Passionate Problem Solver | Hardware Project Builder | 
                         Kaggle Competitor | Chess Enthusiast | Photography Lover
                     </p>
-                    
-                    <!-- Hero Stats Section -->
-                    <div class="hero-stats fade-in-up loading">
-                        <div class="stat-card">
-                            <span class="stats-counter" data-target="2500">2500</span>
-                            <span class="stats-label">Problems Solved</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stats-counter" data-target="100">100</span>
-                            <span class="stats-label">Competitions</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stats-counter">5?</span>
-                            <span class="stats-label">CodeChef Rating</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stats-counter" data-target="2019">2019</span>
-                            <span class="stats-label">Max Rating (CC)</span>
-                        </div>
-                    </div>
                     
                     <a href="#contact" class="cta-button fade-in-up loading">
                         <i class="fas fa-rocket"></i>
@@ -1266,12 +1276,11 @@
     <script>
         // Enhanced JavaScript with Performance Optimizations
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all components
+            // Initialize all components (removed counter references)
             initializeTheme();
             initializeAnimations();
             initializeNavigation();
             initializeParticles();
-            initializeCounters();
             initializeScrollEffects();
             initializeFormValidation();
             initializeTypingEffect();
@@ -1351,14 +1360,14 @@
                     }
                 }, passiveEvent);
                 
-                // Smooth scrolling for navigation links
+                // Smooth scrolling for navigation links with proper offset
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
                         e.preventDefault();
                         const target = document.querySelector(this.getAttribute('href'));
                         if (target) {
-                            const headerHeight = header?.offsetHeight || 70;
-                            const targetPosition = target.offsetTop - headerHeight - 20;
+                            const headerHeight = header?.offsetHeight || 100; // Increased offset
+                            const targetPosition = target.offsetTop - headerHeight - 30; // Added more space
                             
                             window.scrollTo({
                                 top: targetPosition,
@@ -1376,7 +1385,7 @@
                 let current = '';
                 sections.forEach(section => {
                     const rect = section.getBoundingClientRect();
-                    if (rect.top <= 100 && rect.bottom >= 100) {
+                    if (rect.top <= 120 && rect.bottom >= 120) { // Adjusted for new nav height
                         current = section.getAttribute('id');
                     }
                 });
@@ -1400,11 +1409,6 @@
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('visible');
-                            
-                            // Trigger specific animations
-                            if (entry.target.id === 'home') {
-                                setTimeout(animateCounters, 500);
-                            }
                             
                             // Animate skill bars
                             const skillBars = entry.target.querySelectorAll('.skill-progress');
@@ -1453,51 +1457,6 @@
                         particles.appendChild(particle);
                     }
                 }
-            }
-            
-            // Enhanced Counter Animation
-            function initializeCounters() {
-                const counters = document.querySelectorAll('.stats-counter[data-target]');
-                counters.forEach(counter => {
-                    counter.innerText = '0';
-                    counter.setAttribute('data-current', '0');
-                });
-            }
-            
-            function animateCounters() {
-                const counters = document.querySelectorAll('.stats-counter[data-target]');
-                counters.forEach((counter, index) => {
-                    setTimeout(() => {
-                        animateCounter(counter);
-                    }, index * 200);
-                });
-            }
-            
-            function animateCounter(counter) {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const duration = 2000;
-                const start = performance.now();
-                
-                function updateCounter(currentTime) {
-                    const elapsed = currentTime - start;
-                    const progress = Math.min(elapsed / duration, 1);
-                    
-                    // Easing function for smooth animation
-                    const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-                    const currentValue = Math.floor(target * easeOutCubic);
-                    
-                    counter.innerText = currentValue;
-                    counter.setAttribute('data-current', currentValue);
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.innerText = target;
-                        counter.setAttribute('data-current', target);
-                    }
-                }
-                
-                requestAnimationFrame(updateCounter);
             }
             
             // Scroll Effects
@@ -1608,7 +1567,7 @@
                 }
             });
             
-            console.log('?? Portfolio initialized successfully!');
+            console.log('?? Portfolio with enhanced hero section initialized successfully!');
         });
     </script>
 
